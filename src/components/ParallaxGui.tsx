@@ -19,7 +19,7 @@ function ParallaxGui({
   deleteCrystal,
   addSpecificCrystal,
   crystalIndex, setCrystalIndex,
-  dispatchCrystalData, crystalData?: crystalParallaxT,
+  dispatchCrystalData, crystalData: crystalParallaxT,
   crystalSelectionDistinction, setCrystalSelectionDistinction,
   setSelectedForModeColors,
   selectedForModeColors,
@@ -111,7 +111,7 @@ const ToggleCrystalSelectionDistictionBtn = ({
   )
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   toggleSliderSection: {
     borderBottom: '1px solid #A3A3A3',
   },

@@ -87,7 +87,7 @@ function ModifyCrystalInputFields({ deleteCrystal, modMenuFixed, selectedCrystal
   else return <div style={{ height: 500 }} />
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   modeMenu: {
   },
   modeMenuFixed: {

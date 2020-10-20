@@ -40,7 +40,8 @@ const SelectCrystal = ({ onClickHandler, whatCrystal, crystalProps }:
     <Crystal13 {...componentProps} />,
   ]
   return (
-    <>{allCrystalComponents[whatCrystal]}</>
+    <React.Fragment>{allCrystalComponents[whatCrystal]}</React.Fragment>
+    // note that jsx fragment existed here 
   )
 }
 

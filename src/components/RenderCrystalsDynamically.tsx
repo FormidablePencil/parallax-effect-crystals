@@ -21,7 +21,7 @@ const RenderCrystalsDynamically = ({
 }) => {
   const classes = useStyles();
   return (
-    <>
+    <React.Fragment>
       {/* change crystalParallaxDefault to controlled: crystalData */}
       {crystalData.crystals.map((props, index) => {
         let rotateY = props.positionInParallaxCanvas.transform.rotateY
@@ -53,12 +53,12 @@ const RenderCrystalsDynamically = ({
         )
       }
       )}
-    </>
+    </React.Fragment>
   )
 }
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   parallaxItem: {
     position: "absolute",
   },

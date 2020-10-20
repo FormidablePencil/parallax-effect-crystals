@@ -17,7 +17,7 @@ function Crystal1({
   imageProps, browserNotSupported?
 }) {
   return (
-    <>
+    <React.Fragment>
       <svg viewBox="0 0 500 493"><defs>
         <CrystalBackdrop
           feColorMatrixDx={feColorMatrixDx}
@@ -51,7 +51,7 @@ function Crystal1({
 
         </g></g></g><g id="Sheens"><polygon className="cls-8" points="449.9 175.04 409.83 273.94 281.75 310.2 294.4 312.88 426.21 287.68 449.9 175.04" /><polygon className="cls-8" points="289.79 88.33 122.57 154.9 145.87 212.05 145.25 199.06 133.7 157.62 289.79 88.33" /></g></g>
       </svg>
-    </>
+    </React.Fragment>
   )
 }
 

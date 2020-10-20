@@ -21,7 +21,7 @@ function ModPosition({ dispatchCrystalData, expandedAccordions, toggleAccodion, 
         </AccordionSummary>
         <AccordionDetails>
           {selectedCrystalProps.positionInParallaxCanvas.xYPosition &&
-            <>
+            <React.Fragment>
               <TextField
                 onChange={(e) => dispatchCrystalData({ type: 'top', payload: { newValue: e.target.value } })}
                 value={selectedCrystalProps.positionInParallaxCanvas.xYPosition.top}
@@ -42,7 +42,7 @@ function ModPosition({ dispatchCrystalData, expandedAccordions, toggleAccodion, 
                 onChange={(e) => dispatchCrystalData({ type: 'zIndex', payload: { newValue: e.target.value } })}
                 value={selectedCrystalProps.zIndex}
                 label='zIndex' />
-            </>
+            </React.Fragment>
           }
         </AccordionDetails>
       </Accordion>

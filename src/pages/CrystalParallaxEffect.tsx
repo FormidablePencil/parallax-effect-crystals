@@ -58,7 +58,7 @@ function CrystalParallaxEffect() {
   )
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     height: '100vh',
     width: '100%',

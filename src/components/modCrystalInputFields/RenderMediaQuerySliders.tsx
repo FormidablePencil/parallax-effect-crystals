@@ -61,7 +61,7 @@ const RenderMediaQuerySliders = ({ dispatchCrystalData, selectedCrystalProps }:
   }, [sliderValues])
 console.log(selectedCrystalProps.mediaQueryWidth);
   return (
-    <>
+    <React.Fragment>
       <Typography
         variant='h5'
         color={selectedCrystalProps.mediaQueryWidth === '' ? 'secondary' : 'primary'}>
@@ -111,7 +111,7 @@ console.log(selectedCrystalProps.mediaQueryWidth);
       }
 
       {/* sliderValues check if initial !== mod and if so then render the save btn to save data */}
-    </>
+    </React.Fragment>
   )
 }
 

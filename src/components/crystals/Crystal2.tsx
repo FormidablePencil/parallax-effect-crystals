@@ -16,7 +16,7 @@ function Crystal2({
 }) {
 
   return (
-    <>
+    <React.Fragment>
       <svg viewBox="0 0 349 375">
         <defs>
           <CrystalBackdrop
@@ -60,7 +60,7 @@ function Crystal2({
           </g>
         </g>
       </svg>
-    </>
+    </React.Fragment>
   )
 }
 
