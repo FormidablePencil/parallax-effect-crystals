@@ -1,0 +1,100 @@
+ /* .cls-1 {} */
+
+ /* .cls-2 {} */
+
+ /* .cls-2, .cls-6 {} */
+
+ /* .cls-3 {} */
+
+ /* cls-4: the edges: fill */
+
+ /* cls-6: not needed cover over svg; remove */
+
+ /* cls-7: base; fill */
+
+ /* cls-9: getting base to cover; remove */
+
+ .cls-5-crystal13 {
+   overflow: visible;
+   fill: rgba(71, 149, 246, 1);
+ }
+
+ .cls-4 {
+   fill: rgba(71, 149, 246, 1);
+ }
+
+ .cls-5-crystal1 {
+   mask: url(#mask-crystal1);
+ }
+
+ .cls-5-crystal2 {
+   mask: url(#mask-crystal2);
+ }
+
+ .cls-5-crystal3 {
+   mask: url(#mask-crystal3);
+ }
+
+ .cls-5-crystal4 {
+   mask: url(#mask-crystal4);
+ }
+
+ .cls-5-crystal5 {
+   mask: url(#mask-crystal5);
+ }
+
+ .cls-5-crystal6 {
+   mask: url(#mask-crystal6);
+ }
+
+ .cls-5-crystal7 {
+   mask: url(#mask-crystal7);
+ }
+
+ .cls-5-crystal8 {
+   mask: url(#mask-crystal8);
+ }
+
+ .cls-5-crystal9 {
+   mask: url(#mask-crystal9);
+ }
+
+ .cls-5-crystal10 {
+   mask: url(#mask-crystal10);
+ }
+
+ .cls-5-crystal11 {
+   mask: url(#mask-crystal11);
+ }
+
+ .cls-5-crystal12 {
+   mask: url(#mask-crystal12);
+ }
+
+ .cls-5-crystal13 {
+   mask: url(#mask-crystal13);
+ }
+
+ .cls-6 {
+   opacity: 1;
+ }
+
+ .cls-7 {
+   fill: red;
+ }
+
+ .cls-8 {
+   fill: #fff;
+ }
+
+ .cls-8 {
+   stroke: #fff;
+   stroke-miterlimit: 10;
+   opacity: 0.25;
+ }
+
+ /* .cls-9 {} */
+
+ .base {
+   fill: red
+ }
