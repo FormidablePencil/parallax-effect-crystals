@@ -93,7 +93,7 @@ export const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
   zIndex: 0,
   crystalProps: {
     imageProps: {
-      image: require("../assets/pokeballSplash.png"),
+      image: 'https://i.ibb.co/r0Br5g6/react-spring.png',
       x: 200,
       y: 10,
       height: 225,
@@ -167,7 +167,7 @@ const crystalParallaxDefault: crystalParallaxT = {
       zIndex: 0,
       crystalProps: {
         imageProps: {
-          image: require("../assets/pokeballSplash.png"),
+          image: 'https://i.ibb.co/r0Br5g6/react-spring.png',
           x: 50,
           y: 10,
           height: 225,
