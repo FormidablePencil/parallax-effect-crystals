@@ -1,10 +1,10 @@
 import React from 'react'
-
-import { CrystalParallaxEffect } from 'parallax-effect'
-import 'parallax-effect/dist/index.css'
+import { ExampleComponent } from 'parallax-effect'
+// import 'parallax-effect/dist/index.css'
 
 const App = () => {
-  return <CrystalParallaxEffect />
+  return <ExampleComponent text='erer' />
 }
+// CrystalParallaxEffectGui
 
 export default App

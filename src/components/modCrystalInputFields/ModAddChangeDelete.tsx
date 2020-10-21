@@ -2,6 +2,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Button, Grid, makeStyles
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import React from 'react'
 import CrystalSelectionAccordion from './CrystalSelectionAccordion';
+import styles from '../../styles/crystalStyles.module.css';
 
 function ModAddChangeDelete({ deleteCrystal, expandedAccordions,
   toggleAccodion, addSpecificCrystal, dispatchCrystalData }) {
@@ -20,7 +21,7 @@ function ModAddChangeDelete({ deleteCrystal, expandedAccordions,
           <Grid container direction='column'>
 
             <Grid container>
-              <Grid item>
+              <Grid item className={styles.orangebgtest}>
                 <Button
                   onClick={deleteCrystal}
                   className={classes.delete}>Delete component</Button>

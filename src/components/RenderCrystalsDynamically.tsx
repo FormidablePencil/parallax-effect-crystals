@@ -47,12 +47,11 @@ const RenderCrystalsDynamically = ({
             <SvgSizingWrapper overrideStyles={{ transform: ` ${rotate} ${rotateY}` }}>
               <SelectCrystal
                 onClickHandler={() => setCrystalIndex(index)}
-                whatCrystal={props.shardIndex} crystalProps={modedPropsSelectedForEdit ?? props.crystalProps} />
+                whatCrystal={props.shardIndex} crystalProps={modedPropsSelectedForEdit ? props.crystalProps : props.crystalProps} />
             </SvgSizingWrapper>
           </div>
         )
-      }
-      )}
+      })}
     </React.Fragment>
   )
 }

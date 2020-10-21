@@ -14,7 +14,7 @@
 
  /* cls-9: getting base to cover; remove */
 
- .cls-5-crystal13 {
+ .cls5crystal13 {
    overflow: visible;
    fill: rgba(71, 149, 246, 1);
  }
@@ -23,7 +23,7 @@
    fill: rgba(71, 149, 246, 1);
  }
 
- .cls-5-crystal1 {
+ .cls5crystal1 {
    mask: url(#mask-crystal1);
  }
 
@@ -75,7 +75,7 @@
    mask: url(#mask-crystal13);
  }
 
- .cls-6 {
+ .cls6 {
    opacity: 1;
  }
 
@@ -83,18 +83,17 @@
    fill: red;
  }
 
- .cls-8 {
+ .cls8 {
    fill: #fff;
- }
-
- .cls-8 {
    stroke: #fff;
    stroke-miterlimit: 10;
    opacity: 0.25;
  }
 
- /* .cls-9 {} */
-
  .base {
    fill: red
+ }
+
+ .orangebgtest {
+   background-color: orange;
  }
