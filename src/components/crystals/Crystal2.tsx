@@ -1,6 +1,6 @@
 import React from 'react'
-import CrystalBackdrop from './CrystalBackdrop'
-
+import CrystalBackdrop from './CrystalBackdrop';
+import styles from '../../styles/crystalStyles.module.css';
 function Crystal2({
   onClickHandler,
   imageProps, edgesColor, middleColor,
@@ -35,10 +35,10 @@ function Crystal2({
           </mask>
         </defs>
         <title>Crystal 2</title>
-        <g className="cls-1">
+        <g className={styles.cls1}>
           <g id="Shard_2" data-name="Shard 2">
             <polygon filter={browserNotSupported ? '' : "url(#filter-crystal2)"} fill={edgesColor} points="270.17 151.28 151.26 78.81 99.49 179.9 127.1 244.17 192.38 277.53 270.17 241.44 270.17 151.28" />
-            <g onClick={onClickHandler} className='cls-5-crystal2'>
+            <g onClick={onClickHandler} className={styles.cls5crystal2}>
               <polygon
                 fill={middleColor}
                 points="270.17 151.28 151.26 78.81 99.49 179.9 127.1 244.17 192.38 277.53 270.17 241.44 270.17 151.28" />
@@ -50,13 +50,13 @@ function Crystal2({
             </g>
           </g>
           <g id="Sheens">
-            <polygon className="cls-8" points="153.04 87.58 161.3 119.22 162.47 118.05 153.04 87.58" />
-            <polygon className="cls-8" points="167.27 137.57 185.98 188.37 189.61 194.25 167.54 132.26 167.27 137.57" />
-            <polygon className="cls-8" points="202.8 197.88 259.77 154.82 259.77 156.93 210.42 194.79 202.8 197.88" />
-            <polygon className="cls-8" points="153.04 191.42 114.88 179.17 121.5 183.6 153.04 191.42" />
-            <polygon className="cls-8" points="190.84 268.91 189.61 215.18 190.84 220.83 190.84 268.91" />
-            <polygon className="cls-8" points="267.33 238.6 249.11 227.29 250.73 229.98 267.33 238.6" />
-            <polygon className="cls-8" points="129.09 240.56 141.71 230.02 140.15 234.17 129.09 240.56" />
+            <polygon className={styles.cls8} points="153.04 87.58 161.3 119.22 162.47 118.05 153.04 87.58" />
+            <polygon className={styles.cls8} points="167.27 137.57 185.98 188.37 189.61 194.25 167.54 132.26 167.27 137.57" />
+            <polygon className={styles.cls8} points="202.8 197.88 259.77 154.82 259.77 156.93 210.42 194.79 202.8 197.88" />
+            <polygon className={styles.cls8} points="153.04 191.42 114.88 179.17 121.5 183.6 153.04 191.42" />
+            <polygon className={styles.cls8} points="190.84 268.91 189.61 215.18 190.84 220.83 190.84 268.91" />
+            <polygon className={styles.cls8} points="267.33 238.6 249.11 227.29 250.73 229.98 267.33 238.6" />
+            <polygon className={styles.cls8} points="129.09 240.56 141.71 230.02 140.15 234.17 129.09 240.56" />
           </g>
         </g>
       </svg>

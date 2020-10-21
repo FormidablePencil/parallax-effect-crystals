@@ -14,15 +14,16 @@ import Crystal11 from './Crystal11'
 import Crystal12 from './Crystal12'
 import Crystal13 from './Crystal13'
 
+const browserNotSupported = false/* //!  */
 
 
 const SelectCrystal = ({ onClickHandler, whatCrystal, crystalProps }:
   { onClickHandler?: Function, whatCrystal: number, crystalProps?: SelectCrystalT }) => {
   let componentProps
   if (!crystalProps)
-    componentProps = { onClickHandler, ...defaultCrystalData.crystalProps, browserNotSupported: true }
+    componentProps = { onClickHandler, ...defaultCrystalData.crystalProps, browserNotSupported }
   else
-    componentProps = { onClickHandler, ...crystalProps, browserNotSupported: true }
+    componentProps = { onClickHandler, ...crystalProps, browserNotSupported }
 
   const allCrystalComponents = [
     <Crystal1 {...componentProps} />,
