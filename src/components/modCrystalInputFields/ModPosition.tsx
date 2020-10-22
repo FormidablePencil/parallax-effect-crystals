@@ -1,7 +1,7 @@
 import { Accordion, AccordionDetails, AccordionSummary, Grid, TextField, Typography } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import React from 'react'
-import { crystalPositionOnParallaxCanvasT } from '../../constants/crystalParallax';
+import { crystalPositionOnParallaxCanvasT } from '../../constants/crystalDataTypes';
 
 function ModPosition({ dispatchCrystalData, expandedAccordions, toggleAccodion, selectedCrystalProps
 }: { dispatchCrystalData, expandedAccordions, toggleAccodion, selectedCrystalProps: crystalPositionOnParallaxCanvasT }) {

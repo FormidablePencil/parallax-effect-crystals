@@ -1,4 +1,4 @@
-import { crystalParallaxT } from "../constants/crystalParallax"
+import { crystalParallaxT } from "../constants/crystalDataTypes"
 
 import cloneDeep from 'lodash/cloneDeep';
 

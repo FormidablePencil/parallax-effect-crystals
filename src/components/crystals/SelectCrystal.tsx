@@ -1,5 +1,5 @@
 import React from 'react'
-import { defaultCrystalData, SelectCrystalT } from "../../constants/crystalParallax"
+import defaultCrystalData, { SelectCrystalT } from "../../constants/crystalDataTypes"
 import Crystal1 from './Crystal1'
 import Crystal2 from './Crystal2'
 import Crystal3 from './Crystal3'
@@ -13,13 +13,16 @@ import Crystal10 from './Crystal10'
 import Crystal11 from './Crystal11'
 import Crystal12 from './Crystal12'
 import Crystal13 from './Crystal13'
-
-const browserNotSupported = false/* //!  */
-
+import { isSafari } from 'react-device-detect'
 
 const SelectCrystal = ({ onClickHandler, whatCrystal, crystalProps }:
   { onClickHandler?: Function, whatCrystal: number, crystalProps?: SelectCrystalT }) => {
   let componentProps
+  let browserNotSupported = true/* //!  */
+
+  if (isSafari)
+    browserNotSupported = false
+
   if (!crystalProps)
     componentProps = { onClickHandler, ...defaultCrystalData.crystalProps, browserNotSupported }
   else

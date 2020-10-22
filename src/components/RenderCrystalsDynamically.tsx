@@ -1,9 +1,9 @@
 import React from 'react'
 import cloneDeep from 'lodash/cloneDeep';
 import { makeStyles } from '@material-ui/core';
-import { SvgSizingWrapper } from '../pages/Crystals';
+import { SvgSizingWrapper } from '../exports/Crystals';
 import SelectCrystal from './crystals/SelectCrystal';
-import { crystalParallaxT } from '../constants/crystalParallax';
+import { crystalParallaxT } from '../constants/crystalDataTypes';
 
 
 const RenderCrystalsDynamically = ({

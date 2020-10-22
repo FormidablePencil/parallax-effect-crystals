@@ -7,7 +7,7 @@ import ModTransform from './modCrystalInputFields/ModTransform';
 import ModAddChangeDelete from './modCrystalInputFields/ModAddChangeDelete';
 import ModImage from './modCrystalInputFields/ModImage';
 import ModMediaQueries from './modCrystalInputFields/ModMediaQueries';
-import { crystalPositionOnParallaxCanvasT } from '../constants/crystalParallax';
+import { crystalPositionOnParallaxCanvasT } from '../constants/crystalDataTypes';
 
 function ModifyCrystalInputFields({ deleteCrystal, modMenuFixed, selectedCrystalProps, dispatchCrystalData, addSpecificCrystal }:
   { deleteCrystal, modMenuFixed, selectedCrystalProps: crystalPositionOnParallaxCanvasT, dispatchCrystalData, addSpecificCrystal }) {

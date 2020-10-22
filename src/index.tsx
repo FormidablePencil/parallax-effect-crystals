@@ -1,13 +1,18 @@
-import * as React from 'react'
-import CrystalParallaxEffect from './pages/CrystalParallaxEffect'
-import styles from './styles.module.css'
 
-interface Props {
-  text: string
+import Crystals from './exports/Crystals';
+import CrystalParallaxProvider from './CrystalParallaxProvider'
+import useGetRawCrystalData from './hooks/useGetRawCrystalData';
+import { crystalParallaxT } from './constants/crystalDataTypes';
+import CrystalParallax from './CrystalParallax';
+
+export const CrystalGallery = Crystals
+
+// module.exports = {
+//   CrystalGallery: Crystals
+// }
+
+export {
+  CrystalParallax,
+  CrystalParallaxProvider, useGetRawCrystalData,
+  crystalParallaxT
 }
-
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
-
-export const CrystalParallaxEffectGui = CrystalParallaxEffect

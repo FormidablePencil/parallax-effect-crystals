@@ -1,4 +1,4 @@
-import { totalCrystals } from "../constants/crystalParallax"
+import { totalCrystals } from "../constants/crystalDataTypes"
 
 export const mapOverTotalOfCrystals: any = () => {
   let arrToMapOver = []

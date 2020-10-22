@@ -66,5 +66,7 @@
   "files": [
     "dist"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "react-device-detect": "^1.14.0"
+  }
 }

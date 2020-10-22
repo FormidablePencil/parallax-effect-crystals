@@ -1,26 +1,31 @@
 import { makeStyles } from '@material-ui/core';
-import React, { createContext } from 'react'
-import ParallaxGui from '../components/ParallaxGui';
-import useParallaxProperties, { useParallaxPropertiesT } from '../hooks/useParallaxProperties';
+import React, { createContext, useContext, useEffect } from 'react'
+import { useParallaxPropertiesT } from '../hooks/useParallaxProperties';
+import { CrystalParallaxContext, SettingRawCrystalContext } from '../CrystalParallaxProvider'
+import { crystalParallaxT } from '../constants/crystalDataTypes';
 import RenderCrystalsDynamically from '../components/RenderCrystalsDynamically';
 
 export const WindowWidthContext = createContext({ windowWidth: 0 })
 export const CrystalDataContext = createContext<any>({ crystalData: {} })
 
-function CrystalParallaxEffect() {
+export interface CrystalParallaxEffectT {
+  pulledRawCrystalData: crystalParallaxT
+  children
+}
+
+function CrystalParallaxEffect({ pulledRawCrystalData, children }: CrystalParallaxEffectT) {
   const classes = useStyles();
 
-  const {
-    dispatchCrystalData, crystalData,
-    crystalIndex, setCrystalIndex,
-    crystalSelectionDistinction, setCrystalSelectionDistinction,
-    selectedForModeColors, setSelectedForModeColors,
-    modMenuFixed, setModMenuFixed,
-    addSpecificCrystal,
-    deleteCrystal,
-    windowWidth,
-  }: useParallaxPropertiesT = useParallaxProperties()
+  const { setRawCrystalData } = useContext<any>(SettingRawCrystalContext)
 
+  const {
+    crystalData,
+    windowWidth,
+  }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
+
+  useEffect(() => {
+    setRawCrystalData(pulledRawCrystalData)
+  }, [pulledRawCrystalData])
 
   return (
     <WindowWidthContext.Provider value={{ windowWidth }}>
@@ -35,23 +40,15 @@ function CrystalParallaxEffect() {
             <div className={classes.parallaxContainer}>
               <div />
               <RenderCrystalsDynamically
-                selectedForModeColors={selectedForModeColors}
-                crystalIndex={crystalIndex}
-                crystalSelectionDistinction={crystalSelectionDistinction}
                 crystalData={crystalData}
-                setCrystalIndex={setCrystalIndex} />
+                crystalIndex={crystalIndex}
+                setCrystalIndex={setCrystalIndex}
+                crystalSelectionDistinction={crystalSelectionDistinction}
+                selectedForModeColors={selectedForModeColors}
+              />
+              {children}
             </div>
-
           </div>
-          <ParallaxGui
-            deleteCrystal={deleteCrystal}
-            addSpecificCrystal={addSpecificCrystal}
-            modMenuFixed={modMenuFixed} setModMenuFixed={setModMenuFixed}
-            selectedForModeColors={selectedForModeColors} setSelectedForModeColors={setSelectedForModeColors}
-            crystalSelectionDistinction={crystalSelectionDistinction} setCrystalSelectionDistinction={setCrystalSelectionDistinction}
-            crystalIndex={crystalIndex} setCrystalIndex={setCrystalIndex}
-            crystalData={crystalData} dispatchCrystalData={dispatchCrystalData}
-          />
         </div>
       </CrystalDataContext.Provider>
     </WindowWidthContext.Provider>

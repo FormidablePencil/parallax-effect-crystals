@@ -1,6 +1,6 @@
 import { Container, Grid, makeStyles, Switch, TextField, Typography } from '@material-ui/core';
 import React from 'react'
-import { crystalParallaxT } from '../constants/crystalParallax';
+import { crystalParallaxT } from '../constants/crystalDataTypes';
 import { selectedForModeColorsT } from '../hooks/useParallaxProperties';
 import ToggleModMenu from './crystals/ToggleModMenu';
 import ModBackground from './modCrystalInputFields/ModBackground';

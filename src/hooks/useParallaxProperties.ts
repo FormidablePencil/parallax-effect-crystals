@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import crystalParallaxDefault, { crystalParallaxT, defaultCrystalData } from '../constants/crystalParallax'
+import defaultCrystalData, { crystalParallaxT, parallaxDefaults, } from '../constants/crystalDataTypes'
 import cloneDeep from 'lodash/cloneDeep';
 import useCompileCrystalData from './useCompileCrystalData';
 import useWindowSize from "./useWindowSize"
@@ -14,8 +14,8 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
   const [crystalSelectionDistinction, setCrystalSelectionDistinction] = useState(true)
   const [selectedForModeColors, setSelectedForModeColors] = useState<selectedForModeColorsT>({ middle: '#000000', edge: '#FFFFFF' })
   const [modMenuFixed, setModMenuFixed] = useState(true)
-  const [rawCrystalData, setRawCrystalData] = useState<crystalParallaxT>(crystalParallaxDefault)
-  const [crystalData, setCrystalData] = useState<crystalParallaxT>(crystalParallaxDefault)
+  const [rawCrystalData, setRawCrystalData] = useState<crystalParallaxT>(parallaxDefaults)
+  const [crystalData, setCrystalData] = useState<crystalParallaxT>(parallaxDefaults)
 
   const prevCrystalMod = useRef(null) // so to not update state if everything is the same
   const windowWidth = useWindowSize().width
@@ -23,7 +23,6 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
 
   /* compile only when screen width === mediaQuery that's stored in rawCrystalData */
   useCompileCrystalData({ prevCrystalMod, rawCrystalData, crystalData, setCrystalData, windowWidth })
-
 
 
   const updateRawAndSourceOfTruthCrystalData = (state: crystalParallaxT) => {
@@ -75,13 +74,17 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
     addSpecificCrystal,
     deleteCrystal,
     windowWidth,
+    rawCrystalData,
+    setRawCrystalData,
   }
 }
 
 export default useParallaxProperties
 
 export interface useParallaxPropertiesT {
-  dispatchCrystalData, crystalData: crystalParallaxT,
+  dispatchCrystalData,
+  crystalData: crystalParallaxT,
+  setRawCrystalData,
   crystalIndex, setCrystalIndex,
   crystalSelectionDistinction, setCrystalSelectionDistinction,
   selectedForModeColors, setSelectedForModeColors,
@@ -89,4 +92,5 @@ export interface useParallaxPropertiesT {
   addSpecificCrystal,
   deleteCrystal,
   windowWidth,
+  rawCrystalData,
 }

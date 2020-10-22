@@ -1,4 +1,4 @@
-import { crystalParallaxT } from "../constants/crystalParallax";
+import { crystalParallaxT } from "../constants/crystalDataTypes";
 
 const crystalDataReducer = ({ type, payload, crystalIndex, newState }: crystalDataReducerT) => {
   const newValue = payload && payload.newValue

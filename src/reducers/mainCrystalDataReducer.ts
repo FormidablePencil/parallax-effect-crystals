@@ -1,4 +1,4 @@
-import { crystalParallaxT } from "../constants/crystalParallax";
+import { crystalParallaxT } from "../constants/crystalDataTypes";
 import { dispatchCrystalDataT } from "../hooks/useParallaxProperties";
 import cloneDeep from 'lodash/cloneDeep';
 import createUniqueMediaQuery from "../helpers/createUniqueMediaQuery";
