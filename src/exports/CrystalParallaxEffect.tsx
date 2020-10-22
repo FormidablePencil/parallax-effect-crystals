@@ -21,6 +21,11 @@ function CrystalParallaxEffect({ pulledRawCrystalData, children }: CrystalParall
   const {
     crystalData,
     windowWidth,
+
+    crystalIndex,
+    setCrystalIndex,
+    crystalSelectionDistinction,
+    selectedForModeColors,
   }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
 
   useEffect(() => {
@@ -46,8 +51,8 @@ function CrystalParallaxEffect({ pulledRawCrystalData, children }: CrystalParall
                 crystalSelectionDistinction={crystalSelectionDistinction}
                 selectedForModeColors={selectedForModeColors}
               />
-              {children}
             </div>
+            {children}
           </div>
         </div>
       </CrystalDataContext.Provider>

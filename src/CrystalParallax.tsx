@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import CrystalParallaxEffect from './exports/CrystalParallaxEffect'
-import RenderCrystalsDynamically from './components/RenderCrystalsDynamically';
 import { useParallaxPropertiesT } from './hooks/useParallaxProperties';
 import { crystalParallaxT } from '.';
 import { CrystalParallaxContext } from './CrystalParallaxProvider';
+import ParallaxGui from './components/ParallaxGui';
 
 interface CrystalParallaxCompT {
   pulledRawCrystalData: crystalParallaxT
@@ -13,16 +13,27 @@ const CrystalParallax = (props: CrystalParallaxCompT) => {
   const { withGui } = props
 
   const {
-    crystalData,
+    dispatchCrystalData, crystalData,
     crystalIndex, setCrystalIndex,
-    crystalSelectionDistinction,
-    selectedForModeColors,
+    crystalSelectionDistinction, setCrystalSelectionDistinction,
+    selectedForModeColors, setSelectedForModeColors,
+    modMenuFixed, setModMenuFixed,
+    addSpecificCrystal,
+    deleteCrystal,
   }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
 
   return (
     <CrystalParallaxEffect {...props}>
       {withGui &&
-       
+        <ParallaxGui
+          deleteCrystal={deleteCrystal}
+          addSpecificCrystal={addSpecificCrystal}
+          modMenuFixed={modMenuFixed} setModMenuFixed={setModMenuFixed}
+          selectedForModeColors={selectedForModeColors} setSelectedForModeColors={setSelectedForModeColors}
+          crystalSelectionDistinction={crystalSelectionDistinction} setCrystalSelectionDistinction={setCrystalSelectionDistinction}
+          crystalIndex={crystalIndex} setCrystalIndex={setCrystalIndex}
+          crystalData={crystalData} dispatchCrystalData={dispatchCrystalData}
+        />
       }
     </CrystalParallaxEffect>
 

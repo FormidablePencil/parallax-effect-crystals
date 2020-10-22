@@ -7,22 +7,26 @@ export const SettingRawCrystalContext = createContext({})
 
 function CrystalParallaxProvider({ children }) {
   const {
-    crystalData,
-    crystalIndex, setCrystalIndex,
-    crystalSelectionDistinction,
-    selectedForModeColors,
-    windowWidth,
     rawCrystalData,
     setRawCrystalData,
+    dispatchCrystalData, crystalData,
+    crystalIndex, setCrystalIndex,
+    crystalSelectionDistinction, setCrystalSelectionDistinction,
+    selectedForModeColors, setSelectedForModeColors,
+    modMenuFixed, setModMenuFixed,
+    addSpecificCrystal,
+    deleteCrystal,
   }: useParallaxPropertiesT = useParallaxProperties()
 
   return (
     <CrystalParallaxContext.Provider value={{
-      crystalData,
+      dispatchCrystalData, crystalData,
       crystalIndex, setCrystalIndex,
-      crystalSelectionDistinction,
-      selectedForModeColors,
-      windowWidth,
+      crystalSelectionDistinction, setCrystalSelectionDistinction,
+      selectedForModeColors, setSelectedForModeColors,
+      modMenuFixed, setModMenuFixed,
+      addSpecificCrystal,
+      deleteCrystal,
     }}>
       <RawCrystalDataContext.Provider value={{ rawCrystalData }}>
         <SettingRawCrystalContext.Provider value={{ setRawCrystalData }}>
