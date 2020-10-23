@@ -1,10 +1,10 @@
 {
-  "name": "parallax-effect",
+  "name": "parallax-effect-crystals",
   "version": "1.0.0",
   "description": "Made with create-react-library",
   "author": "Dennis Aleksandrov",
   "license": "MIT",
-  "repository": "Dennis Aleksandrov/parallax-effect",
+  "repository": "Dennis Aleksandrov/parallax-effect-crystals",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",

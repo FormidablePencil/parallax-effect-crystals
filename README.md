@@ -1,4 +1,4 @@
-# parallax-effect
+# parallax-effect-crystals
 
 > Made with create-react-library
 
@@ -7,7 +7,7 @@
 ## Install
 
 ```bash
-npm install --save parallax-effect
+npm install --save parallax-effect-crystals
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ npm install --save parallax-effect
 ```tsx
 import React, { Component } from 'react'
 
-import MyComponent from 'parallax-effect'
-import 'parallax-effect/dist/index.css'
+import MyComponent from 'parallax-effect-crystals'
+import 'parallax-effect-crystals/dist/index.css'
 
 class Example extends Component {
   render() {

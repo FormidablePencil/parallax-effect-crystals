@@ -1,6 +1,6 @@
 import React from 'react'
-import { CrystalParallaxProvider, CrystalParallax } from 'parallax-effect'
-import 'parallax-effect/dist/index.css'
+import { CrystalParallaxProvider, CrystalParallax } from 'parallax-effect-crystals'
+import 'parallax-effect-crystals/dist/index.css'
 import crystalParallaxDefault from './constants/crystalParallaxDefault'
 
 const App = () => {
