@@ -8,23 +8,29 @@
 
 ```bash
 npm install --save parallax-effect-crystals
+or 
+yarn add parallax-effect-crystals
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
-
-import MyComponent from 'parallax-effect-crystals'
+import React from 'react'
+import { CrystalParallaxProvider, CrystalParallax } from 'parallax-effect-crystals'
 import 'parallax-effect-crystals/dist/index.css'
+import crystalParallaxDefault from './constants/crystalParallaxDefault'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return (
+    <CrystalParallaxProvider>
+      <CrystalParallax
+        pulledRawCrystalData={crystalParallaxDefault} />
+    </CrystalParallaxProvider>
+  )
 }
+
 ```
 
 ## License
 
-MIT © [Dennis Aleksandrov](https://github.com/Dennis Aleksandrov)
+MIT © [Dennis Aleksandrov](https://github.com/FormidablePencil)
