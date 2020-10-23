@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core';
-import React, { createContext, useContext, useEffect } from 'react'
+import React, { createContext, useContext, useEffect, useRef } from 'react'
 import { useParallaxPropertiesT } from '../hooks/useParallaxProperties';
 import { CrystalParallaxContext, SettingRawCrystalContext, RawCrystalDataContext } from '../CrystalParallaxProvider'
 import { crystalParallaxT } from '../constants/crystalDataTypes';
@@ -12,7 +12,7 @@ export const CrystalDataContext = createContext<any>({ crystalData: {} })
 export interface CrystalParallaxEffectT {
   pulledRawCrystalData: crystalParallaxT
   children
-  onChange?: any
+  onChange?: (rawCrystalData: crystalParallaxT) => void
 }
 
 function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: CrystalParallaxEffectT) {
@@ -29,13 +29,16 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
   const { setRawCrystalData } = useContext<any>(SettingRawCrystalContext)
   const { rawCrystalData } = useContext<any>(RawCrystalDataContext)
 
+  const renderCount = useRef(0)
   const prevRawCrystalData = usePrevious(rawCrystalData)
 
+  /* trigger onChange event of rawCrystalData !== prevRawCrystalData */
   useEffect(() => {
     if (onChange)
       if (rawCrystalData !== prevRawCrystalData)
-        onChange(rawCrystalData)
-
+        if (renderCount.current > 1) {
+          onChange(rawCrystalData)
+        } else renderCount.current++
   }, [rawCrystalData])
 
 
@@ -48,8 +51,8 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
       <CrystalDataContext.Provider value={{ crystalData }}>
         <div>
           <div style={{
-            background: crystalData.crystalParallaxBg.backgroundColor,
-            backgroundImage: `url(${crystalData.crystalParallaxBg.backgroundImage})`,
+            background: '#fff',
+            // backgroundImage: `url(${crystalData.crystalParallaxBg.backgroundImage})`,
             backgroundSize: 'cover',
             backgroundPosition: `${crystalData.crystalParallaxBg.bgImgX}% ${crystalData.crystalParallaxBg.bgImgY}%`,
           }} className={classes.container}>

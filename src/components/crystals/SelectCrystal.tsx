@@ -18,10 +18,10 @@ import { isSafari } from 'react-device-detect'
 const SelectCrystal = ({ onClickHandler, whatCrystal, crystalProps }:
   { onClickHandler?: Function, whatCrystal: number, crystalProps?: SelectCrystalT }) => {
   let componentProps
-  let browserNotSupported = true/* //!  */
+  let browserNotSupported = false
 
   if (isSafari)
-    browserNotSupported = false
+    browserNotSupported = true
 
   if (!crystalProps)
     componentProps = { onClickHandler, ...defaultCrystalData.crystalProps, browserNotSupported }

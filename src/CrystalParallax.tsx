@@ -7,12 +7,11 @@ import ParallaxGui from './components/ParallaxGui';
 
 interface CrystalParallaxCompT {
   pulledRawCrystalData: crystalParallaxT
-  onChange?
+  onChange?: (rawCrystalData: crystalParallaxT) => void
   withGui?
 }
 const CrystalParallax = (props: CrystalParallaxCompT) => {
-  const { withGui, onChange } = props
-  onChange()
+  const { withGui } = props
   
   const {
     dispatchCrystalData, crystalData,

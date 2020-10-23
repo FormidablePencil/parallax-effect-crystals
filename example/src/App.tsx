@@ -16,14 +16,13 @@ export default App
 
 const Page = () => {
   const onChangeHandler = () => {
-    
+    console.log('hit');
   }
 
   return (
     <CrystalParallax
-
-      // onChangeRawCrystals={onChangeHandler}
-      // withGui={true}
+      onChange={onChangeHandler}
+      withGui={true}
       pulledRawCrystalData={crystalParallaxDefault} />
   )
 }

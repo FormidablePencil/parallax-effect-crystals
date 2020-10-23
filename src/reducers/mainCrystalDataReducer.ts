@@ -52,6 +52,7 @@ const mainCrystalDataReducer = (
           crystalIndex, newState: newStateRaw
         })
         setRawCrystalData(newStateRaw)
+        console.log(newStateRaw, 'after')
 
         newStateSourceOfTruth = compileMediaQueryDataToCrystalData({
           rawCrystalData: newStateRaw, sourceOfTruthCrystalData: crystalData,
