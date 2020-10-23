@@ -17,7 +17,7 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
   const [rawCrystalData, setRawCrystalData] = useState<crystalParallaxT>(parallaxDefaults)
   const [crystalData, setCrystalData] = useState<crystalParallaxT>(parallaxDefaults)
 
-  const prevCrystalMod = useRef(null) // so to not update state if everything is the same
+  const prevCrystalMod = useRef('') // so to not update state if everything is the same
   const windowWidth = useWindowSize().width
 
 

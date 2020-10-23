@@ -1,10 +1,9 @@
 import { makeStyles } from '@material-ui/core';
-import React, { createContext, useContext, useEffect, useRef } from 'react'
+import React, { createContext, useContext, useEffect } from 'react'
 import { useParallaxPropertiesT } from '../hooks/useParallaxProperties';
-import { CrystalParallaxContext, SettingCrystalDataContext, RawCrystalDataContext } from '../CrystalParallaxProvider'
+import { CrystalParallaxContext, SettingCrystalDataContext } from '../CrystalParallaxProvider'
 import { crystalParallaxT } from '../constants/crystalDataTypes';
 import RenderCrystalsDynamically from '../components/RenderCrystalsDynamically';
-import usePrevious from '../hooks/usePrevious';
 
 export const CrystalDataContext = createContext<any>({ crystalData: {} })
 
@@ -24,19 +23,19 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
     selectedForModeColors,
   }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
   const { setRawCrystalData, setCrystalData } = useContext<any>(SettingCrystalDataContext)
-  const { rawCrystalData } = useContext<any>(RawCrystalDataContext)
+  // const { rawCrystalData } = useContext<any>(RawCrystalDataContext)
 
-  const renderCount = useRef(0)
-  const prevRawCrystalData = usePrevious(rawCrystalData)
+  // const renderCount = useRef(0)
+  // const prevRawCrystalData = usePrevious(rawCrystalData)
 
   /* trigger onChange event of rawCrystalData !== prevRawCrystalData */
-  useEffect(() => {
-    if (onChange)
-      if (rawCrystalData !== prevRawCrystalData)
-        if (renderCount.current > 1) {
-          onChange(rawCrystalData)
-        } else renderCount.current++
-  }, [rawCrystalData])
+  // useEffect(() => {
+  //   if (onChange)
+  //     if (rawCrystalData !== prevRawCrystalData)
+  //       if (renderCount.current > 1) {
+  //         onChange(rawCrystalData)
+  //       } else renderCount.current++
+  // }, [rawCrystalData])
 
 
   useEffect(() => {

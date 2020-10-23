@@ -1,7 +1,7 @@
 import React, { createContext } from 'react'
 import useParallaxProperties, { useParallaxPropertiesT } from './hooks/useParallaxProperties'
 
-export const WindowWidthContext = createContext({ windowWidth: 0 })
+export const WindowWidthContext = createContext({ windowWidth: 2000 })
 export const CrystalParallaxContext = createContext({})
 export const RawCrystalDataContext = createContext({})
 export const SettingCrystalDataContext = createContext({})
@@ -22,23 +22,23 @@ function CrystalParallaxProvider({ children }) {
   }: useParallaxPropertiesT = useParallaxProperties()
 
   return (
-    <CrystalParallaxContext.Provider value={{
-      dispatchCrystalData, crystalData,
-      crystalIndex, setCrystalIndex,
-      crystalSelectionDistinction, setCrystalSelectionDistinction,
-      selectedForModeColors, setSelectedForModeColors,
-      modMenuFixed, setModMenuFixed,
-      addSpecificCrystal,
-      deleteCrystal,
-    }}>
-      <RawCrystalDataContext.Provider value={{ rawCrystalData }}>
-        <SettingCrystalDataContext.Provider value={{ setCrystalData, setRawCrystalData }}>
-          <WindowWidthContext.Provider value={{windowWidth}}>
+    <WindowWidthContext.Provider value={{ windowWidth }}>
+      <CrystalParallaxContext.Provider value={{
+        dispatchCrystalData, crystalData,
+        crystalIndex, setCrystalIndex,
+        crystalSelectionDistinction, setCrystalSelectionDistinction,
+        selectedForModeColors, setSelectedForModeColors,
+        modMenuFixed, setModMenuFixed,
+        addSpecificCrystal,
+        deleteCrystal,
+      }}>
+        <RawCrystalDataContext.Provider value={{ rawCrystalData }}>
+          <SettingCrystalDataContext.Provider value={{ setCrystalData, setRawCrystalData }}>
             {children}
-          </WindowWidthContext.Provider>
-        </SettingCrystalDataContext.Provider>
-      </RawCrystalDataContext.Provider>
-    </CrystalParallaxContext.Provider>
+          </SettingCrystalDataContext.Provider>
+        </RawCrystalDataContext.Provider>
+      </CrystalParallaxContext.Provider>
+    </WindowWidthContext.Provider>
   )
 }
 

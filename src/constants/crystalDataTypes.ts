@@ -121,7 +121,7 @@ const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
   },
   mediaQueries: [ /* append data for mediaQueries that is different than it's main */
     {
-      mediaQueryWidth: 1000,
+      mediaQueryWidth: 1234,
       shardIndex: 0,
       zIndex: 0,
       crystalProps: {
@@ -133,7 +133,7 @@ const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
         },
         feColorMatrixDx: 2,
         feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
-        edgesColor: '#3AEFF4', middleColor: '#45F44E',
+        edgesColor: '#5266CB', middleColor: '#57C4CB',
       },
       positionInParallaxCanvas: {
         transform: {
@@ -151,6 +151,42 @@ const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
   ]
 }
 
+const crystalDataPlaceholder: crystalPositionOnParallaxCanvasT = {
+  mediaQueryWidth: '',
+  key: 0,
+  shardIndex: 0,
+  zIndex: 0,
+  crystalProps: {
+    imageProps: {
+      image: '',
+      x: 0,
+      y: 0,
+      height: 0,
+      width: 0,
+    },
+    feColorMatrixDx: 0,
+    feColorMatrixDy: 0,
+    feColorMatrixStdDeviation: 0,
+    edgesColor: '', middleColor: '',
+    feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
+  },
+  positionInParallaxCanvas: {
+    transform: {
+      scale: 0,
+      translateZ: 0,
+      rotateY: false,
+      rotate: '',
+    },/* 'translateZ(1px) scale(1)' */
+    xYPosition: {
+      top: '',
+      bottom: '',
+      left: '',
+      right: '',
+    }
+  },
+  mediaQueries: []
+}
+
 export const parallaxDefaults = {
   crystalParallaxBg: {
     backgroundColor: '#373737',
@@ -158,7 +194,7 @@ export const parallaxDefaults = {
     bgImgX: '',
     bgImgY: '',
   },
-  crystals: [defaultCrystalData]
+  crystals: [crystalDataPlaceholder]
 }
 
 

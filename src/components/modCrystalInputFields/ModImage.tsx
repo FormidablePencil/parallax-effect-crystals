@@ -9,8 +9,7 @@ function ModImage({ dispatchCrystalData, expandedAccordions, toggleAccodion, sel
   return (
     <Grid item>
       <Accordion
-        expanded={expandedAccordions.image}
-      >
+        expanded={expandedAccordions.image}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           onClick={() => toggleAccodion('image')}>

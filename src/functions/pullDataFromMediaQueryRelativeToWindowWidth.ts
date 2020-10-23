@@ -34,12 +34,30 @@ export const mergeCrystalDataAndMediaQueryData = ({ mediaQueryData, crystalKey, 
 }) => {
   let copyCrystalData: crystalParallaxT = cloneDeep(sourceOfTruthCrystalData)
   let mod = false
+  let mediaQueryDataImageProps = {}
+
+  if (mediaQueryData.crystalProps)
+    mediaQueryDataImageProps = mediaQueryData.crystalProps.imageProps
 
   copyCrystalData.crystals = copyCrystalData.crystals.map(crystal => {
     if (crystal.key === crystalKey) {
       mod = true
-      if (prevCrystalMod) prevCrystalMod.current = crystal.mediaQueryWidth
-      return { ...crystal, ...mediaQueryData }
+      if (prevCrystalMod) {
+        console.log(prevCrystalMod.current)
+        prevCrystalMod.current = crystal.mediaQueryWidth
+      }
+      return {
+        ...crystal, ...mediaQueryData,
+        crystalProps: {
+          ...crystal.crystalProps, ...mediaQueryData.crystalProps,
+          imageProps: {
+            ...crystal.crystalProps.imageProps, ...[mediaQueryDataImageProps]
+          }
+        },
+        positionInParallaxCanvas: {
+          ...crystal.positionInParallaxCanvas, ...mediaQueryData.positionInParallaxCanvas
+        }
+      }
     } else return crystal
   })
 

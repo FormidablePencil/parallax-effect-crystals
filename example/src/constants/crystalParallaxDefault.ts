@@ -63,7 +63,7 @@ const crystalParallaxDefault: crystalParallaxT = {
             },
             feColorMatrixDx: 2,
             feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
-            edgesColor: '#E057F4', middleColor: '#F44083',
+            edgesColor: '#CB8B65', middleColor: '#F44083',
           },
           positionInParallaxCanvas: {
             transform: {
@@ -93,7 +93,7 @@ const crystalParallaxDefault: crystalParallaxT = {
             },
             feColorMatrixDx: 2,
             feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
-            edgesColor: '#F4DA8B', middleColor: '#F49DBB',
+            edgesColor: '#9DCB6F', middleColor: '#3ACB84',
 
           },
           positionInParallaxCanvas: {
