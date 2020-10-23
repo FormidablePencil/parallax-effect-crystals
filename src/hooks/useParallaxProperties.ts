@@ -76,6 +76,7 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
     windowWidth,
     rawCrystalData,
     setRawCrystalData,
+    setCrystalData,
   }
 }
 
@@ -93,4 +94,5 @@ export interface useParallaxPropertiesT {
   deleteCrystal,
   windowWidth,
   rawCrystalData,
+  setCrystalData,
 }

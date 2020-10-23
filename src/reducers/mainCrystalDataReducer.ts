@@ -13,7 +13,6 @@ const mainCrystalDataReducer = (
 ) => {
   let newStateRaw: crystalParallaxT = cloneDeep(rawCrystalData);
   let newStateSourceOfTruth: crystalParallaxT = cloneDeep(crystalData);
-
   switch (type) {
     case 'backgroundColor':
     case 'backgroundImage':
@@ -52,7 +51,6 @@ const mainCrystalDataReducer = (
           crystalIndex, newState: newStateRaw
         })
         setRawCrystalData(newStateRaw)
-        console.log(newStateRaw, 'after')
 
         newStateSourceOfTruth = compileMediaQueryDataToCrystalData({
           rawCrystalData: newStateRaw, sourceOfTruthCrystalData: crystalData,

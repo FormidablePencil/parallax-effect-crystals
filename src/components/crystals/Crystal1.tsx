@@ -1,5 +1,5 @@
 import React from 'react'
-import CrystalBackdrop from './CrystalBackdrop'; 
+import CrystalBackdrop from './CrystalBackdrop';
 import styles from '../../styles/crystalStyles.module.css';
 function Crystal1({
   onClickHandler,

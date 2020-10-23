@@ -59,7 +59,7 @@ const RenderMediaQuerySliders = ({ dispatchCrystalData, selectedCrystalProps }:
       return value
     })
   }, [sliderValues])
-console.log(selectedCrystalProps.mediaQueryWidth);
+  
   return (
     <React.Fragment>
       <Typography
