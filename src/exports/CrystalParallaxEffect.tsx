@@ -1,9 +1,10 @@
 import { makeStyles } from '@material-ui/core';
 import React, { createContext, useContext, useEffect } from 'react'
 import { useParallaxPropertiesT } from '../hooks/useParallaxProperties';
-import { CrystalParallaxContext, SettingRawCrystalContext } from '../CrystalParallaxProvider'
+import { CrystalParallaxContext, SettingRawCrystalContext, RawCrystalDataContext } from '../CrystalParallaxProvider'
 import { crystalParallaxT } from '../constants/crystalDataTypes';
 import RenderCrystalsDynamically from '../components/RenderCrystalsDynamically';
+import usePrevious from '../hooks/usePrevious';
 
 export const WindowWidthContext = createContext({ windowWidth: 0 })
 export const CrystalDataContext = createContext<any>({ crystalData: {} })
@@ -11,13 +12,11 @@ export const CrystalDataContext = createContext<any>({ crystalData: {} })
 export interface CrystalParallaxEffectT {
   pulledRawCrystalData: crystalParallaxT
   children
+  onChange?: any
 }
 
-function CrystalParallaxEffect({ pulledRawCrystalData, children }: CrystalParallaxEffectT) {
+function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: CrystalParallaxEffectT) {
   const classes = useStyles();
-
-  const { setRawCrystalData } = useContext<any>(SettingRawCrystalContext)
-
   const {
     crystalData,
     windowWidth,
@@ -27,6 +26,18 @@ function CrystalParallaxEffect({ pulledRawCrystalData, children }: CrystalParall
     crystalSelectionDistinction,
     selectedForModeColors,
   }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
+  const { setRawCrystalData } = useContext<any>(SettingRawCrystalContext)
+  const { rawCrystalData } = useContext<any>(RawCrystalDataContext)
+
+  const prevRawCrystalData = usePrevious(rawCrystalData)
+
+  useEffect(() => {
+    if (onChange)
+      if (rawCrystalData !== prevRawCrystalData)
+        onChange(rawCrystalData)
+
+  }, [rawCrystalData])
+
 
   useEffect(() => {
     setRawCrystalData(pulledRawCrystalData)
