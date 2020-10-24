@@ -15,13 +15,18 @@ import Crystal12 from './Crystal12'
 import Crystal13 from './Crystal13'
 import { isSafari } from 'react-device-detect'
 
-const SelectCrystal = ({ onClickHandler, whatCrystal, crystalProps }:
+const SelectCrystal = ({
+  onClickHandler,
+  whatCrystal,
+  crystalProps,
+}:
   { onClickHandler?: Function, whatCrystal: number, crystalProps?: SelectCrystalT }) => {
   let componentProps
   let browserNotSupported = false
 
   if (isSafari)
     browserNotSupported = true
+
 
   if (!crystalProps)
     componentProps = { onClickHandler, ...defaultCrystalData.crystalProps, browserNotSupported }
