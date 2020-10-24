@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import defaultCrystalData, { crystalParallaxT, parallaxDefaults, } from '../constants/crystalDataTypes'
 import cloneDeep from 'lodash/cloneDeep';
 import useCompileCrystalData from './useCompileCrystalData';
 import useWindowSize from "./useWindowSize"
 import mainCrystalDataReducer from '../reducers/mainCrystalDataReducer';
 import { sliderValuesT } from '../components/modCrystalInputFields/RenderMediaQuerySliders';
+import { v4 as uuidv4 } from 'uuid'
 
 export interface selectedForModeColorsT { middle, edge }
 export interface dispatchCrystalDataT { type, payload?: { newValue?, moddedMediaQueryValues?: sliderValuesT[], mediaQueryWidth?} }
@@ -17,12 +18,11 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
   const [rawCrystalData, setRawCrystalData] = useState<crystalParallaxT>(parallaxDefaults)
   const [crystalData, setCrystalData] = useState<crystalParallaxT>(parallaxDefaults)
 
-  const prevCrystalMod = useRef('') // so to not update state if everything is the same
+  // const prevCrystalMod = useRef('') // so to not update state if everything is the same
   const windowWidth = useWindowSize().width
 
-
   /* compile only when screen width === mediaQuery that's stored in rawCrystalData */
-  useCompileCrystalData({ prevCrystalMod, rawCrystalData, crystalData, setCrystalData, windowWidth })
+  useCompileCrystalData({ rawCrystalData, crystalData, setCrystalData, windowWidth })
 
 
   const updateRawAndSourceOfTruthCrystalData = (state: crystalParallaxT) => {
@@ -31,12 +31,14 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
   }
 
 
-
   const addSpecificCrystal = (index) => {
     let newState = cloneDeep(crystalData)
     const newComponent = cloneDeep(defaultCrystalData)
+    newComponent.key = uuidv4()
     newComponent.shardIndex = index
-    newState.crystals[newState.crystals.length] = newComponent
+    // console.log(newComponent, 'newComponent')
+    newState.crystals.push(newComponent)
+    console.log(newState, 'newState')
     updateRawAndSourceOfTruthCrystalData(newState)
     setCrystalIndex(newState.crystals.length - 1)
   }

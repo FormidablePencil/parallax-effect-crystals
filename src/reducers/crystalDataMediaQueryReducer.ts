@@ -12,7 +12,7 @@ const crystalDataMediaQueryReducer = ({ type, payload, crystalIndex, crystalData
         case 'edgesColor':
         case 'middleColor':
         case 'feColorMatrixBackdropColor':
-          data.crystalProps[type] = newValue
+          data.crystalProps[type] = newValue /* //! */
           break;
 
         case 'image':

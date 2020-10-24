@@ -28,12 +28,10 @@ const pullDataFromMediaQueryRelativeToWindowWidth = ({ rawCrystalData, windowWid
 }
 
 
-
-export const mergeCrystalDataAndMediaQueryData = ({ mediaQueryData, crystalKey, sourceOfTruthCrystalData, prevCrystalMod }: {
-  mediaQueryData, crystalKey, sourceOfTruthCrystalData, prevCrystalMod?
+export const mergeCrystalDataAndMediaQueryData = ({ mediaQueryData, crystalKey, sourceOfTruthCrystalData }: {
+  mediaQueryData, crystalKey, sourceOfTruthCrystalData
 }) => {
   let copyCrystalData: crystalParallaxT = cloneDeep(sourceOfTruthCrystalData)
-  let mod = false
   let mediaQueryDataImageProps = {}
 
   if (mediaQueryData.crystalProps)
@@ -41,11 +39,11 @@ export const mergeCrystalDataAndMediaQueryData = ({ mediaQueryData, crystalKey, 
 
   copyCrystalData.crystals = copyCrystalData.crystals.map(crystal => {
     if (crystal.key === crystalKey) {
-      mod = true
-      if (prevCrystalMod) {
-        console.log(prevCrystalMod.current)
-        prevCrystalMod.current = crystal.mediaQueryWidth
-      }
+      console.log(crystal, 'crystal')
+      // if (prevCrystalMod) {
+      // console.log(prevCrystalMod.current)
+      // prevCrystalMod.current = crystal.mediaQueryWidth
+      // }
       return {
         ...crystal, ...mediaQueryData,
         crystalProps: {
@@ -56,30 +54,24 @@ export const mergeCrystalDataAndMediaQueryData = ({ mediaQueryData, crystalKey, 
         },
         positionInParallaxCanvas: {
           ...crystal.positionInParallaxCanvas, ...mediaQueryData.positionInParallaxCanvas
-        }
+        },
       }
     } else return crystal
   })
-
-  if (prevCrystalMod) {
-    if (prevCrystalMod.current !== mediaQueryData.mediaQueryWidth && mod)
-      return copyCrystalData
-    else return null
-  } else
-    return copyCrystalData
+  return copyCrystalData
 }
 
 
 
-export const compileMediaQueryDataToCrystalData = ({ rawCrystalData, sourceOfTruthCrystalData, windowWidth, prevCrystalMod, removeMediaQueryWidth }: {
-  rawCrystalData, sourceOfTruthCrystalData, windowWidth, prevCrystalMod?, removeMediaQueryWidth?
+export const compileMediaQueryDataToCrystalData = ({ rawCrystalData, sourceOfTruthCrystalData, windowWidth, removeMediaQueryWidth }: {
+  rawCrystalData, sourceOfTruthCrystalData, windowWidth, removeMediaQueryWidth?
 }) => {
   let { retrievedMediaQueryData, crystalKey } = pullDataFromMediaQueryRelativeToWindowWidth({ rawCrystalData, windowWidth })
 
   if (!retrievedMediaQueryData) return
 
   let merged = mergeCrystalDataAndMediaQueryData({
-    mediaQueryData: retrievedMediaQueryData, crystalKey, sourceOfTruthCrystalData, prevCrystalMod
+    mediaQueryData: retrievedMediaQueryData, crystalKey, sourceOfTruthCrystalData
   })
 
   return merged

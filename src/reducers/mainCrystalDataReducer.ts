@@ -9,7 +9,9 @@ import crystalDataReducer from "./crystalDataReducer";
 
 const mainCrystalDataReducer = (
   { type, payload }: dispatchCrystalDataT,
-  { rawCrystalData, crystalData, setCrystalData, setRawCrystalData, crystalIndex, updateRawAndSourceOfTruthCrystalData }
+  { rawCrystalData, crystalData,
+    setCrystalData, setRawCrystalData,
+    crystalIndex, updateRawAndSourceOfTruthCrystalData }
 ) => {
   let newStateRaw: crystalParallaxT = cloneDeep(rawCrystalData);
   let newStateSourceOfTruth: crystalParallaxT = cloneDeep(crystalData);
