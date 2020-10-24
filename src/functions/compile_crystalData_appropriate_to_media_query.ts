@@ -46,7 +46,7 @@ export const compile_crystalData_appropriate_to_media_query = ({ rawCrystalData,
           ...appropriate_crystal_data_of_windowWidth.crystalProps,
           imageProps: {
             ...crystal.crystalProps.imageProps,
-            ...appropriate_crystal_data_of_windowWidth.crystalProps.imageProps /* //! */
+            ...appropriate_crystal_data_of_windowWidth.crystalProps.imageProps,
           }
         },
         positionInParallaxCanvas: {

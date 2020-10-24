@@ -1,20 +1,21 @@
 import { crystalParallaxT } from "../constants/crystalDataTypes";
 import { dispatchCrystalDataT } from "../hooks/useParallaxProperties";
 import cloneDeep from 'lodash/cloneDeep';
-import createUniqueMediaQuery from "../helpers/createUniqueMediaQuery";
 import crystalDataMediaQueryReducer from "./crystalDataMediaQueryReducer";
-import { compileMediaQueryDataToCrystalData } from "../functions/pullDataFromMediaQueryRelativeToWindowWidth";
 import crystalDataReducer from "./crystalDataReducer";
+import addNewMediaQueryToCrystalData from "../functions/addNewMediaQueryToCrystalData";
+import compile_crystalData_appropriate_to_media_query from "../functions/compile_crystalData_appropriate_to_media_query";
+import updateMediaQueryValues from "../functions/updateMediaQueryValues";
 
 
 const mainCrystalDataReducer = (
   { type, payload }: dispatchCrystalDataT,
   { rawCrystalData, crystalData,
     setCrystalData, setRawCrystalData,
-    crystalIndex, updateRawAndSourceOfTruthCrystalData }
+    crystalIndex, updateRawAndSourceOfTruthCrystalData, windowWidth }
 ) => {
   let newStateRaw: crystalParallaxT = cloneDeep(rawCrystalData);
-  let newStateSourceOfTruth: crystalParallaxT = cloneDeep(crystalData);
+
   switch (type) {
     case 'backgroundColor':
     case 'backgroundImage':
@@ -26,14 +27,16 @@ const mainCrystalDataReducer = (
 
     case 'update mediaQuery values':
       newStateRaw = updateMediaQueryValues(payload, newStateRaw, crystalIndex)
-      updateRawAndSourceOfTruthCrystalData(newStateRaw)
+      setRawCrystalData(newStateRaw)
+
+      const newCompiledCrystalData = compile_crystalData_appropriate_to_media_query({ rawCrystalData: newStateRaw, windowWidth })
+      setCrystalData(newCompiledCrystalData)
+      // updateRawAndSourceOfTruthCrystalData(newStateRaw)
       break;
 
     case 'addMediaQuery':
-      newStateRaw.crystals[crystalIndex].mediaQueries.push({
-        mediaQueryWidth: createUniqueMediaQuery({ crystalData: rawCrystalData, crystalIndex })/* must be different than any other mediaQueryWidth */
-      })
-      updateRawAndSourceOfTruthCrystalData(newStateRaw)
+      const stateWithNewMediaQuery = addNewMediaQueryToCrystalData({ newStateRaw, crystalIndex, rawCrystalData })
+      updateRawAndSourceOfTruthCrystalData(stateWithNewMediaQuery)
       break;
 
     case 'removeMediaQuery':
@@ -53,34 +56,22 @@ const mainCrystalDataReducer = (
           crystalIndex, newState: newStateRaw
         })
         setRawCrystalData(newStateRaw)
-
-        newStateSourceOfTruth = compileMediaQueryDataToCrystalData({
-          rawCrystalData: newStateRaw, sourceOfTruthCrystalData: crystalData,
-          windowWidth: window.innerWidth,
-          removeMediaQueryWidth: true
-        })
-        setCrystalData(newStateSourceOfTruth)
-
+        
+        const newCompiledCrystalData = compile_crystalData_appropriate_to_media_query({ rawCrystalData: newStateRaw, windowWidth })
+        
+        setCrystalData(newCompiledCrystalData)
+        
       } else {/* if no mediaQuery present */
         newStateRaw = crystalDataReducer({ type, payload, crystalIndex, newState: newStateRaw })
-        updateRawAndSourceOfTruthCrystalData(newStateRaw)
+        
+        const newCompiledCrystalData = compile_crystalData_appropriate_to_media_query({ rawCrystalData: newStateRaw, windowWidth })
+        
+        setRawCrystalData(newStateRaw)
+        setCrystalData(newCompiledCrystalData)
       }
       break;
   }
 }
 
-
-const updateMediaQueryValues = (payload, newState: crystalParallaxT, crystalIndex) => {
-  // find mediaQuery by intial value and change it at for the moded (map function)
-  payload.moddedMediaQueryValues.map(item => {
-    newState.crystals[crystalIndex].mediaQueries.map(mediaQuery => {
-      if (mediaQuery.mediaQueryWidth === item.initial)
-        mediaQuery.mediaQueryWidth = item.mod
-      return mediaQuery
-    })
-    return item
-  })
-  return newState
-}
 
 export default mainCrystalDataReducer

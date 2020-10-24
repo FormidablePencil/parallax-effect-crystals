@@ -41,10 +41,8 @@ const crystalDataMediaQueryReducer = ({ type, payload, crystalIndex, crystalData
           break;
 
         case 'zIndex':
-          data.zIndex = newValue
-
         case 'shardIndex':
-          data.shardIndex = newValue
+          data[type] = newValue
           break;
 
         case 'top':

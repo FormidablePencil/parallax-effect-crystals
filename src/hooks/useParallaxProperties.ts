@@ -60,7 +60,8 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
       { type, payload },
       {
         rawCrystalData, setRawCrystalData, crystalData, setCrystalData,
-        crystalIndex, updateRawAndSourceOfTruthCrystalData
+        crystalIndex, updateRawAndSourceOfTruthCrystalData,
+        windowWidth
       }
     )
   }

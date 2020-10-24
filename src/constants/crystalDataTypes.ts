@@ -77,7 +77,7 @@ export interface crystalParallaxT {
   crystals: crystalPositionOnParallaxCanvasT[]
 }
 
-const feColorMatrixCrystalBackdropColor = `
+export const feColorMatrixCrystalBackdropColor = `
 0     0     0     0     0 
 0     0     0     0     0 
 0     0     0     0     0 

@@ -23,20 +23,6 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
     selectedForModeColors,
   }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
   const { setRawCrystalData, setCrystalData } = useContext<any>(SettingCrystalDataContext)
-  // const { rawCrystalData } = useContext<any>(RawCrystalDataContext)
-
-  // const renderCount = useRef(0)
-  // const prevRawCrystalData = usePrevious(rawCrystalData)
-
-  /* trigger onChange event of rawCrystalData !== prevRawCrystalData */
-  // useEffect(() => {
-  //   if (onChange)
-  //     if (rawCrystalData !== prevRawCrystalData)
-  //       if (renderCount.current > 1) {
-  //         onChange(rawCrystalData)
-  //       } else renderCount.current++
-  // }, [rawCrystalData])
-
 
   useEffect(() => {
     setRawCrystalData(pulledRawCrystalData)
@@ -49,7 +35,8 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
         <div style={
           crystalData.crystalParallaxBg.backgroundImage ?
             {
-              background: crystalData.crystalParallaxBg.backgroundColor,
+              backgroundColor: crystalData.crystalParallaxBg.backgroundColor,
+              // background: `url(${crystalData.crystalParallaxBg.backgroundImage}) ${crystalData.crystalParallaxBg.bgImgX}% ${crystalData.crystalParallaxBg.bgImgY}% cover`,
               backgroundImage: `url(${crystalData.crystalParallaxBg.backgroundImage})`,
               backgroundSize: 'cover',
               backgroundPosition: `${crystalData.crystalParallaxBg.bgImgX}% ${crystalData.crystalParallaxBg.bgImgY}%`,
