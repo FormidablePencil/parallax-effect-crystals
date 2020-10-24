@@ -28,7 +28,7 @@ export default App
 
 const Page = () => {
   const onChangeHandler = () => {
-    console.log('hit');
+    console.log('CrystalParallax changed');
   }
 
   return (

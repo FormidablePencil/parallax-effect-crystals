@@ -1,9 +1,10 @@
 import { makeStyles } from '@material-ui/core';
-import React, { createContext, useContext, useEffect } from 'react'
+import React, { createContext, useContext, useEffect, useRef } from 'react'
 import { useParallaxPropertiesT } from '../hooks/useParallaxProperties';
-import { CrystalParallaxContext, SettingCrystalDataContext } from '../CrystalParallaxProvider'
+import { CrystalParallaxContext, RawCrystalDataContext, SettingCrystalDataContext } from '../CrystalParallaxProvider'
 import { crystalParallaxT } from '../constants/crystalDataTypes';
 import RenderCrystalsDynamically from '../components/RenderCrystalsDynamically';
+import usePrevious from '../hooks/usePrevious';
 
 export const CrystalDataContext = createContext<any>({ crystalData: {} })
 
@@ -23,11 +24,23 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
     selectedForModeColors,
   }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
   const { setRawCrystalData, setCrystalData } = useContext<any>(SettingCrystalDataContext)
+  const { rawCrystalData } = useContext<any>(RawCrystalDataContext)
+  const renderCount = useRef(0)
+  const prevRawCrystalData = usePrevious(rawCrystalData)
 
   useEffect(() => {
     setRawCrystalData(pulledRawCrystalData)
     setCrystalData(pulledRawCrystalData)
   }, [pulledRawCrystalData])
+
+  /* trigger onChange event when window causes rawCrystalData to change */
+  useEffect(() => {
+    if (onChange)
+      if (rawCrystalData !== prevRawCrystalData)
+        if (renderCount.current > 1) {
+          onChange(rawCrystalData)
+        } else renderCount.current++
+  }, [rawCrystalData])
 
   return (
     <CrystalDataContext.Provider value={{ crystalData }}>
@@ -36,7 +49,6 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
           crystalData.crystalParallaxBg.backgroundImage ?
             {
               backgroundColor: crystalData.crystalParallaxBg.backgroundColor,
-              // background: `url(${crystalData.crystalParallaxBg.backgroundImage}) ${crystalData.crystalParallaxBg.bgImgX}% ${crystalData.crystalParallaxBg.bgImgY}% cover`,
               backgroundImage: `url(${crystalData.crystalParallaxBg.backgroundImage})`,
               backgroundSize: 'cover',
               backgroundPosition: `${crystalData.crystalParallaxBg.bgImgX}% ${crystalData.crystalParallaxBg.bgImgY}%`,

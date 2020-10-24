@@ -36,9 +36,7 @@ const useParallaxProperties = (): useParallaxPropertiesT => {
     const newComponent = cloneDeep(defaultCrystalData)
     newComponent.key = uuidv4()
     newComponent.shardIndex = index
-    // console.log(newComponent, 'newComponent')
     newState.crystals.push(newComponent)
-    console.log(newState, 'newState')
     updateRawAndSourceOfTruthCrystalData(newState)
     setCrystalIndex(newState.crystals.length - 1)
   }
