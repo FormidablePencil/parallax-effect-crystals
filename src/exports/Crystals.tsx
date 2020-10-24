@@ -1,7 +1,7 @@
 import { Container, Grid, Typography } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import SelectCrystal from '../components/crystals/SelectCrystal'
-import defaultCrystalData, {parallaxDefaults} from '../constants/crystalDataTypes'
+import defaultCrystalData from '../constants/crystalDataTypes'
 import { mapOverTotalOfCrystals } from '../helpers/mapOverTotalOfCrystals'
 
 export const SvgSizingWrapper = ({ children, overrideStyles }: { children, overrideStyles?: any }) => {

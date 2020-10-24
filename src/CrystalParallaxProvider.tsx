@@ -3,7 +3,7 @@ import useParallaxProperties, { useParallaxPropertiesT } from './hooks/useParall
 
 export const WindowWidthContext = createContext({ windowWidth: 2000 })
 export const CrystalParallaxContext = createContext({})
-export const RawCrystalDataContext = createContext({})
+export const RawCrystalDataContext = createContext<any>({})
 export const SettingCrystalDataContext = createContext({})
 
 function CrystalParallaxProvider({ children }) {
