@@ -43,7 +43,7 @@ const crystalParallaxDefault: crystalParallaxT = {
           rotate: '',
         },/* 'translateZ(1px) scale(1)' */
         xYPosition: {
-          top: '100px',
+          top: '800px',
           bottom: '',
           left: '100px',
           right: '',

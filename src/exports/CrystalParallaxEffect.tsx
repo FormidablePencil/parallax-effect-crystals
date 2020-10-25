@@ -36,10 +36,11 @@ function CrystalParallaxEffect({ onChange, pulledRawCrystalData, children }: Cry
   /* trigger onChange event when window causes rawCrystalData to change */
   useEffect(() => {
     if (onChange)
-      if (rawCrystalData !== prevRawCrystalData)
+      if (rawCrystalData !== prevRawCrystalData) {
         if (renderCount.current > 1) {
           onChange(rawCrystalData)
         } else renderCount.current++
+      }
   }, [rawCrystalData])
 
   return (
