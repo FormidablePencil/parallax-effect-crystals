@@ -7,7 +7,7 @@ import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
 const App = () => {
 
   return (
-    <CrystalParallaxProvider>
+    <CrystalParallaxProvider eventToFollow='mouse'>
       <BrowserRouter>
         <Link to='/'>parallax canvas</Link>
         <Link to='/page2'>page 2</Link>

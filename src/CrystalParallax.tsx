@@ -25,11 +25,12 @@ const CrystalParallax = (props: CrystalParallaxCompT) => {
     modMenuFixed,
     setModMenuFixed,
     addSpecificCrystal,
-    deleteCrystal
+    deleteCrystal,
+    eventToFollow
   }: useParallaxPropertiesT = useContext<any>(CrystalParallaxContext)
 
   return (
-    <CrystalParallaxEffect {...props}>
+    <CrystalParallaxEffect eventToFollow={eventToFollow} {...props}>
       {withGui && (
         <ParallaxGui
           deleteCrystal={deleteCrystal}

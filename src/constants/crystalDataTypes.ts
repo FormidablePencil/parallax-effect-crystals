@@ -1,4 +1,5 @@
 export interface SelectCrystalT {
+  translateX3d?, translateY3d?, 
   feColorMatrixDx,
   feColorMatrixDy, feColorMatrixStdDeviation,
   edgesColor, middleColor, feColorMatrixBackdropColor
@@ -12,6 +13,7 @@ export interface SelectCrystalT {
 }
 
 export interface mediaQueriesSelectCrystalT {
+  translateX3d?, translateY3d?, 
   feColorMatrixDx?,
   feColorMatrixDy?, feColorMatrixStdDeviation?,
   edgesColor?, middleColor?, feColorMatrixBackdropColor?,
@@ -99,6 +101,8 @@ const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
       height: 225,
       width: 225,
     },
+    translateX3d: 3.5,
+    translateY3d: 3.5,
     feColorMatrixDx: 2,
     feColorMatrixDy: 4,
     feColorMatrixStdDeviation: 1,
@@ -136,6 +140,8 @@ export const crystalDataPlaceholder: crystalPositionOnParallaxCanvasT = {
       height: 0,
       width: 0,
     },
+    translateX3d: 0,
+    translateY3d: 0,
     feColorMatrixDx: 0,
     feColorMatrixDy: 0,
     feColorMatrixStdDeviation: 0,

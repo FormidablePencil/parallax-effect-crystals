@@ -1,17 +1,29 @@
 import { Grid, makeStyles } from '@material-ui/core'
 import React, { useState } from 'react'
-import ModPosition from './modCrystalInputFields/ModPosition';
-import ModShadow from './modCrystalInputFields/ModShadow';
-import ModColor from './modCrystalInputFields/ModColor';
-import ModTransform from './modCrystalInputFields/ModTransform';
-import ModAddChangeDelete from './modCrystalInputFields/ModAddChangeDelete';
-import ModImage from './modCrystalInputFields/ModImage';
-import ModMediaQueries from './modCrystalInputFields/ModMediaQueries';
-import { crystalPositionOnParallaxCanvasT } from '../constants/crystalDataTypes';
+import ModPosition from './modCrystalInputFields/ModPosition'
+import ModShadow from './modCrystalInputFields/ModShadow'
+import ModColor from './modCrystalInputFields/ModColor'
+import ModTransform from './modCrystalInputFields/ModTransform'
+import ModAddChangeDelete from './modCrystalInputFields/ModAddChangeDelete'
+import ModImage from './modCrystalInputFields/ModImage'
+import ModMediaQueries from './modCrystalInputFields/ModMediaQueries'
+import { crystalPositionOnParallaxCanvasT } from '../constants/crystalDataTypes'
+import Mode3dPositionOnScroll from './Mode3dPositionOnScroll'
 
-function ModifyCrystalInputFields({ deleteCrystal, modMenuFixed, selectedCrystalProps, dispatchCrystalData, addSpecificCrystal }:
-  { deleteCrystal, modMenuFixed, selectedCrystalProps: crystalPositionOnParallaxCanvasT, dispatchCrystalData, addSpecificCrystal }) {
-  const classes = useStyles();
+function ModifyCrystalInputFields({
+  deleteCrystal,
+  modMenuFixed,
+  selectedCrystalProps,
+  dispatchCrystalData,
+  addSpecificCrystal
+}: {
+  deleteCrystal
+  modMenuFixed
+  selectedCrystalProps: crystalPositionOnParallaxCanvasT
+  dispatchCrystalData
+  addSpecificCrystal
+}) {
+  const classes = useStyles()
   const defaultExpandedAccordions = {
     shadow: false,
     color: false,
@@ -20,17 +32,29 @@ function ModifyCrystalInputFields({ deleteCrystal, modMenuFixed, selectedCrystal
     image: false,
     addAndDelete: false,
     mediaQuery: false,
+    onScollMovementAnim: false
   }
-  const [expandedAccordions, setExpandedAccordions] = useState(defaultExpandedAccordions)
+  const [expandedAccordions, setExpandedAccordions] = useState(
+    defaultExpandedAccordions
+  )
 
   const toggleAccodion = (whatAccordion) =>
-    setExpandedAccordions(prev => { return { ...defaultExpandedAccordions, [whatAccordion]: !prev[whatAccordion] } })
+    setExpandedAccordions((prev) => {
+      return {
+        ...defaultExpandedAccordions,
+        [whatAccordion]: !prev[whatAccordion]
+      }
+    })
 
   if (selectedCrystalProps)
     return (
-      <div className={`${classes.modeMenu} ${modMenuFixed && classes.modeMenuFixed}`} style={{}}>
+      <div
+        className={`${classes.modeMenu} ${
+          modMenuFixed && classes.modeMenuFixed
+        }`}
+        style={{}}
+      >
         <Grid container spacing={1} direction='column'>
-
           <ModAddChangeDelete
             deleteCrystal={deleteCrystal}
             addSpecificCrystal={addSpecificCrystal}
@@ -81,6 +105,12 @@ function ModifyCrystalInputFields({ deleteCrystal, modMenuFixed, selectedCrystal
             toggleAccodion={toggleAccodion}
           />
 
+          <Mode3dPositionOnScroll
+            selectedCrystalProps={selectedCrystalProps}
+            expandedAccordions={expandedAccordions}
+            dispatchCrystalData={dispatchCrystalData}
+            toggleAccodion={toggleAccodion}
+          />
         </Grid>
       </div>
     )
@@ -88,16 +118,14 @@ function ModifyCrystalInputFields({ deleteCrystal, modMenuFixed, selectedCrystal
 }
 
 const useStyles = makeStyles(() => ({
-  modeMenu: {
-  },
+  modeMenu: {},
   modeMenuFixed: {
     position: 'fixed',
-    right: - 50,
+    right: -50,
     top: 0,
     width: 500,
-    transform: 'scale(.7)',
-  },
-}));
-
+    transform: 'scale(.7)'
+  }
+}))
 
 export default ModifyCrystalInputFields

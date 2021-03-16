@@ -11,9 +11,10 @@ const feColorMatrixCrystalBackdropColor = `
 const crystalParallaxDefault: crystalParallaxT = {
   crystalParallaxBg: {
     backgroundColor: '#373737',
-    backgroundImage: 'https://wallpaperboat.com/wp-content/uploads/2020/03/grey-texture-background-image-20.jpg',
+    backgroundImage:
+      'https://wallpaperboat.com/wp-content/uploads/2020/03/grey-texture-background-image-20.jpg',
     bgImgX: '',
-    bgImgY: '',
+    bgImgY: ''
   },
   crystals: [
     {
@@ -27,29 +28,33 @@ const crystalParallaxDefault: crystalParallaxT = {
           x: 50,
           y: 10,
           height: 225,
-          width: 225,
+          width: 225
         },
+        translateX3d: 3.5,
+        translateY3d: 3.5,
         feColorMatrixDx: 5,
         feColorMatrixDy: 5,
         feColorMatrixStdDeviation: 1,
-        edgesColor: '#5C8AE4', middleColor: '#F62E34',
-        feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
+        edgesColor: '#5C8AE4',
+        middleColor: '#F62E34',
+        feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor
       },
       positionInParallaxCanvas: {
         transform: {
           scale: 2,
           translateZ: 1,
           rotateY: false,
-          rotate: '',
-        },/* 'translateZ(1px) scale(1)' */
+          rotate: ''
+        } /* 'translateZ(1px) scale(1)' */,
         xYPosition: {
           top: '800px',
           bottom: '',
           left: '100px',
-          right: '',
+          right: ''
         }
       },
-      mediaQueries: [ /* append data for mediaQueries that is different than it's main */
+      mediaQueries: [
+        /* append data for mediaQueries that is different than it's main */
         {
           mediaQueryWidth: 555,
           shardIndex: 0,
@@ -59,25 +64,28 @@ const crystalParallaxDefault: crystalParallaxT = {
               x: 50,
               y: 10,
               height: 225,
-              width: 225,
+              width: 225
             },
+            translateX3d: 3.5,
+            translateY3d: 3.5,
             feColorMatrixDx: 2,
             feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
-            edgesColor: '#5C8AE4', middleColor: '#F62E34',
+            edgesColor: '#5C8AE4',
+            middleColor: '#F62E34'
           },
           positionInParallaxCanvas: {
             transform: {
               scale: 1,
               translateZ: 3,
               rotateY: false,
-              rotate: '',
+              rotate: ''
             },
             xYPosition: {
               top: '100px',
               bottom: '',
               left: '0px',
-              right: '',
-            },
+              right: ''
+            }
           }
         },
         {
@@ -89,26 +97,28 @@ const crystalParallaxDefault: crystalParallaxT = {
               x: 50,
               y: 10,
               height: 225,
-              width: 225,
+              width: 225
             },
+            translateX3d: 3.5,
+            translateY3d: 3.5,
             feColorMatrixDx: 2,
             feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
-            edgesColor: '#5C8AE4', middleColor: '#F62E34',
-
+            edgesColor: '#5C8AE4',
+            middleColor: '#F62E34'
           },
           positionInParallaxCanvas: {
             transform: {
               scale: 2,
               translateZ: 1
-            },/* 'translateZ(1px) scale(1)' */
+            } /* 'translateZ(1px) scale(1)' */,
             xYPosition: {
               top: '100px',
               bottom: '',
               left: '100px',
-              right: '',
-            },
+              right: ''
+            }
           }
-        },
+        }
       ]
     },
     {
@@ -122,29 +132,33 @@ const crystalParallaxDefault: crystalParallaxT = {
           x: 50,
           y: 10,
           height: 225,
-          width: 225,
+          width: 225
         },
+        translateX3d: 3.5,
+        translateY3d: 3.5,
         feColorMatrixDx: 5,
         feColorMatrixDy: 5,
         feColorMatrixStdDeviation: 1,
-        edgesColor: '#5E30CB', middleColor: '#9791CB',
-        feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
+        edgesColor: '#5E30CB',
+        middleColor: '#9791CB',
+        feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor
       },
       positionInParallaxCanvas: {
         transform: {
           scale: 2,
           translateZ: 1,
           rotateY: false,
-          rotate: '',
-        },/* 'translateZ(1px) scale(1)' */
+          rotate: ''
+        } /* 'translateZ(1px) scale(1)' */,
         xYPosition: {
           top: '400px',
           bottom: '',
           left: '0px',
-          right: '',
+          right: ''
         }
       },
-      mediaQueries: [ /* append data for mediaQueries that is different than it's main */
+      mediaQueries: [
+        /* append data for mediaQueries that is different than it's main */
         {
           mediaQueryWidth: 555,
           shardIndex: 0,
@@ -154,25 +168,28 @@ const crystalParallaxDefault: crystalParallaxT = {
               x: 50,
               y: 10,
               height: 225,
-              width: 225,
+              width: 225
             },
+            translateX3d: 3.5,
+            translateY3d: 3.5,
             feColorMatrixDx: 2,
             feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
-            edgesColor: '#5E30CB', middleColor: '#9791CB',
+            edgesColor: '#5E30CB',
+            middleColor: '#9791CB'
           },
           positionInParallaxCanvas: {
             transform: {
               scale: 2,
               translateZ: 1,
               rotateY: false,
-              rotate: '',
+              rotate: ''
             },
             xYPosition: {
               top: '400px',
               bottom: '',
               left: '0px',
-              right: '',
-            },
+              right: ''
+            }
           }
         },
         {
@@ -184,31 +201,34 @@ const crystalParallaxDefault: crystalParallaxT = {
               x: 50,
               y: 10,
               height: 225,
-              width: 225,
+              width: 225
             },
+            translateX3d: 3.5,
+            translateY3d: 3.5,
             feColorMatrixDx: 2,
             feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
-            edgesColor: '#5E30CB', middleColor: '#9791CB',
-
+            edgesColor: '#5E30CB',
+            middleColor: '#9791CB'
           },
           positionInParallaxCanvas: {
             transform: {
               scale: 2,
               translateZ: 1
-            },/* 'translateZ(1px) scale(1)' */
+            } /* 'translateZ(1px) scale(1)' */,
             xYPosition: {
               top: '400px',
               bottom: '',
               left: '0px',
-              right: '',
-            },
+              right: ''
+            }
           }
-        },
+        }
       ]
-    },
+    }
   ]
 }
 
 export { feColorMatrixCrystalBackdropColor }
 
 export default crystalParallaxDefault
+

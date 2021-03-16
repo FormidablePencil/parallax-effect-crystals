@@ -96,4 +96,5 @@ export interface useParallaxPropertiesT {
   windowWidth,
   rawCrystalData,
   setCrystalData,
+  eventToFollow?
 }

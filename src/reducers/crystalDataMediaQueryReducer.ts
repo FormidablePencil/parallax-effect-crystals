@@ -1,11 +1,22 @@
-import { crystalDataReducerT } from "./crystalDataReducer";
+import { crystalDataReducerT } from './crystalDataReducer'
 
-const crystalDataMediaQueryReducer = ({ type, payload, crystalIndex, crystalData, newState }: crystalDataReducerT) => {
+const crystalDataMediaQueryReducer = ({
+  type,
+  payload,
+  crystalIndex,
+  crystalData,
+  newState
+}: crystalDataReducerT) => {
   const newValue = payload && payload.newValue
 
-  newState.crystals[crystalIndex].mediaQueries.map(data => {
-    if (data.mediaQueryWidth === crystalData.crystals[crystalIndex].mediaQueryWidth) {
+  newState.crystals[crystalIndex].mediaQueries.map((data) => {
+    if (
+      data.mediaQueryWidth ===
+      crystalData.crystals[crystalIndex].mediaQueryWidth
+    ) {
       switch (type) {
+        case 'translateX3d':
+        case 'translateY3d':
         case 'feColorMatrixDx':
         case 'feColorMatrixDy':
         case 'feColorMatrixStdDeviation':
@@ -13,7 +24,7 @@ const crystalDataMediaQueryReducer = ({ type, payload, crystalIndex, crystalData
         case 'middleColor':
         case 'feColorMatrixBackdropColor':
           data.crystalProps[type] = newValue /* //! */
-          break;
+          break
 
         case 'image':
         case 'imageHeight':
@@ -27,33 +38,33 @@ const crystalDataMediaQueryReducer = ({ type, payload, crystalIndex, crystalData
           if (type === 'imageX') whatProp = 'x'
           if (type === 'imageY') whatProp = 'y'
           data.crystalProps.imageProps[whatProp] = newValue
-          break;
+          break
 
         case 'scale':
         case 'translateZ':
           data.positionInParallaxCanvas.transform[type] = newValue
-          break;
+          break
 
         case 'rotate':
         case 'rotateY':
           data.positionInParallaxCanvas.transform[type] = newValue
           data.positionInParallaxCanvas.transform[type] = newValue
-          break;
+          break
 
         case 'zIndex':
         case 'shardIndex':
           data[type] = newValue
-          break;
+          break
 
         case 'top':
         case 'bottom':
         case 'left':
         case 'right':
           data.positionInParallaxCanvas.xYPosition[type] = newValue
-          break;
+          break
 
         default:
-          break;
+          break
       }
     }
     return data
@@ -62,3 +73,4 @@ const crystalDataMediaQueryReducer = ({ type, payload, crystalIndex, crystalData
 }
 
 export default crystalDataMediaQueryReducer
+
