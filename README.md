@@ -7,9 +7,9 @@
 ## Install
 
 ```bash
-npm install --save parallax-effect-crystals
+npm install --save https://github.com/FormidablePencil/parallax-effect-crystals
 or 
-yarn add parallax-effect-crystals
+yarn add https://github.com/FormidablePencil/parallax-effect-crystals
 ```
 
 ## Usage
@@ -25,6 +25,7 @@ const App = () => {
   return (
     <CrystalParallaxProvider>
       <CrystalParallax
+          withGui={false}
         pulledRawCrystalData={crystalParallaxDefault} />
     </CrystalParallaxProvider>
   )
