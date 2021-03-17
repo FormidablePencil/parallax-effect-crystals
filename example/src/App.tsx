@@ -14,7 +14,7 @@ const App = () => {
   return (
     <CrystalParallaxProvider
       crystalClickedOn={crystalClickedOn}
-      eventToFollow='mouse'
+      eventToFollow='scroll'
     >
       <BrowserRouter>
         <Link to='/'>parallax canvas</Link>
