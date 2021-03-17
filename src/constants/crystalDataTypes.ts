@@ -1,8 +1,12 @@
 export interface SelectCrystalT {
-  translateX3d?, translateY3d?, 
-  feColorMatrixDx,
-  feColorMatrixDy, feColorMatrixStdDeviation,
-  edgesColor, middleColor, feColorMatrixBackdropColor
+  translateX3d?
+  translateY3d?
+  feColorMatrixDx
+  feColorMatrixDy
+  feColorMatrixStdDeviation
+  edgesColor
+  middleColor
+  feColorMatrixBackdropColor
   imageProps: {
     image: string
     x: number
@@ -13,10 +17,14 @@ export interface SelectCrystalT {
 }
 
 export interface mediaQueriesSelectCrystalT {
-  translateX3d?, translateY3d?, 
-  feColorMatrixDx?,
-  feColorMatrixDy?, feColorMatrixStdDeviation?,
-  edgesColor?, middleColor?, feColorMatrixBackdropColor?,
+  translateX3d?
+  translateY3d?
+  feColorMatrixDx?
+  feColorMatrixDy?
+  feColorMatrixStdDeviation?
+  edgesColor?
+  middleColor?
+  feColorMatrixBackdropColor?
   imageProps?: {
     image?: string
     x?: number
@@ -47,8 +55,8 @@ export interface mediaQueriesDataAppentionT {
   }
 }
 export interface crystalPositionOnParallaxCanvasT {
-  mediaQueryWidth: string | number,
-  key?: number,
+  mediaQueryWidth: string | number
+  key?: number
   shardIndex: number
   zIndex: number
   crystalProps: SelectCrystalT
@@ -95,38 +103,39 @@ const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
   zIndex: 0,
   crystalProps: {
     imageProps: {
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png',
       x: 200,
       y: 10,
       height: 225,
-      width: 225,
+      width: 225
     },
     translateX3d: 3.5,
     translateY3d: 3.5,
     feColorMatrixDx: 2,
     feColorMatrixDy: 4,
     feColorMatrixStdDeviation: 1,
-    edgesColor: '#5C8AE4', middleColor: '#F62E34',
-    feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
+    edgesColor: '#5C8AE4',
+    middleColor: '#F62E34',
+    feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor
   },
   positionInParallaxCanvas: {
     transform: {
       scale: 2,
       translateZ: 1,
       rotateY: false,
-      rotate: '',
-    },/* 'translateZ(1px) scale(1)' */
+      rotate: ''
+    } /* 'translateZ(1px) scale(1)' */,
     xYPosition: {
       top: '100px',
       bottom: '',
       left: '100px',
-      right: '',
+      right: ''
     }
   },
   mediaQueries: []
 }
 
-/*//!  maybe remove  */
 export const crystalDataPlaceholder: crystalPositionOnParallaxCanvasT = {
   mediaQueryWidth: '',
   key: 0,
@@ -138,28 +147,29 @@ export const crystalDataPlaceholder: crystalPositionOnParallaxCanvasT = {
       x: 0,
       y: 0,
       height: 0,
-      width: 0,
+      width: 0
     },
     translateX3d: 0,
     translateY3d: 0,
     feColorMatrixDx: 0,
     feColorMatrixDy: 0,
     feColorMatrixStdDeviation: 0,
-    edgesColor: '', middleColor: '',
-    feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor,
+    edgesColor: '',
+    middleColor: '',
+    feColorMatrixBackdropColor: feColorMatrixCrystalBackdropColor
   },
   positionInParallaxCanvas: {
     transform: {
       scale: 0,
       translateZ: 0,
       rotateY: false,
-      rotate: '',
-    },/* 'translateZ(1px) scale(1)' */
+      rotate: ''
+    } /* 'translateZ(1px) scale(1)' */,
     xYPosition: {
       top: '',
       bottom: '',
       left: '',
-      right: '',
+      right: ''
     }
   },
   mediaQueries: []
@@ -167,13 +177,12 @@ export const crystalDataPlaceholder: crystalPositionOnParallaxCanvasT = {
 
 export const parallaxDefaults: crystalParallaxT = {
   crystalParallaxBg: {
-    backgroundColor: '#373737',
-    backgroundImage: 'https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v475-katie-101-abstractblackandwhitebg_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=86196a47d14e811c3149f69279f90c1e',
+    backgroundColor: '',
+    backgroundImage: '',
     bgImgX: '',
-    bgImgY: '',
+    bgImgY: ''
   },
   crystals: []
 }
-
 
 export default defaultCrystalData
