@@ -95,7 +95,7 @@ const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
   zIndex: 0,
   crystalProps: {
     imageProps: {
-      image: 'https://i.ibb.co/r0Br5g6/react-spring.png',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png',
       x: 200,
       y: 10,
       height: 225,

@@ -11,8 +11,7 @@ const feColorMatrixCrystalBackdropColor = `
 const crystalParallaxDefault: crystalParallaxT = {
   crystalParallaxBg: {
     backgroundColor: '#373737',
-    backgroundImage:
-      'https://wallpaperboat.com/wp-content/uploads/2020/03/grey-texture-background-image-20.jpg',
+    backgroundImage: '',
     bgImgX: '',
     bgImgY: ''
   },
@@ -24,14 +23,15 @@ const crystalParallaxDefault: crystalParallaxT = {
       zIndex: 1,
       crystalProps: {
         imageProps: {
-          image: 'https://i.ibb.co/r0Br5g6/react-spring.png',
+          image:
+            'https://purepng.com/public/uploads/large/purepng.com-pokemonpokemonpocket-monsterspokemon-franchisefictional-speciesone-pokemonmany-pokemonone-pikachu-1701527784579tobow.png',
           x: 50,
           y: 10,
           height: 225,
           width: 225
         },
         translateX3d: 3.5,
-        translateY3d: 3.5,
+        translateY3d: -2.5,
         feColorMatrixDx: 5,
         feColorMatrixDy: 5,
         feColorMatrixStdDeviation: 1,
@@ -128,14 +128,15 @@ const crystalParallaxDefault: crystalParallaxT = {
       zIndex: 0,
       crystalProps: {
         imageProps: {
-          image: 'https://i.ibb.co/0pNL1RX/react-Native-Logo.png',
-          x: 50,
-          y: 10,
-          height: 225,
-          width: 225
+          image:
+            'https://vignette.wikia.nocookie.net/nintendo/images/a/ac/Detective_Pikachu_-_Character_artwork_02.png/revision/latest/scale-to-width-down/2000?cb=20180113042004&path-prefix=en',
+          x: 100,
+          y: 50,
+          height: 325,
+          width: 325
         },
-        translateX3d: 3.5,
-        translateY3d: 3.5,
+        translateX3d: -5.5,
+        translateY3d: 9.5,
         feColorMatrixDx: 5,
         feColorMatrixDy: 5,
         feColorMatrixStdDeviation: 1,
@@ -231,4 +232,3 @@ const crystalParallaxDefault: crystalParallaxT = {
 export { feColorMatrixCrystalBackdropColor }
 
 export default crystalParallaxDefault
-

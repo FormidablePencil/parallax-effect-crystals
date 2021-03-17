@@ -10,10 +10,12 @@ export const SettingCrystalDataContext = createContext({})
 
 function CrystalParallaxProvider({
   children,
-  eventToFollow
+  eventToFollow,
+  crystalClickedOn
 }: {
   children
   eventToFollow?
+  crystalClickedOn?
 }) {
   const {
     windowWidth,
@@ -50,7 +52,8 @@ function CrystalParallaxProvider({
           modMenuFixed,
           setModMenuFixed,
           addSpecificCrystal,
-          deleteCrystal
+          deleteCrystal,
+          crystalClickedOn
         }}
       >
         <RawCrystalDataContext.Provider value={{ rawCrystalData }}>

@@ -46,22 +46,23 @@ const RenderCrystalsDynamically = ({
         }
 
         return (
-          <AnimEffectWrapper
-            translateX3d={props.crystalProps.translateX3d}
-            translateY3d={props.crystalProps.translateY3d}
-            onScrollAnim={onScrollAnim}
+          <div
             key={index}
-          >
-            <div
-              className={classes.parallaxItem}
-              style={{
-                zIndex: props.zIndex,
-                transform: `
+            className={classes.parallaxItem}
+            style={{
+              zIndex: props.zIndex,
+              transform: `
         translateZ(${props.positionInParallaxCanvas.transform.translateZ}px) 
         scale(${props.positionInParallaxCanvas.transform.scale})
         `,
-                ...props.positionInParallaxCanvas.xYPosition
-              }}
+              ...props.positionInParallaxCanvas.xYPosition
+            }}
+          >
+            <AnimEffectWrapper
+              crystalUuid={props.key}
+              translateX3d={props.crystalProps.translateX3d}
+              translateY3d={props.crystalProps.translateY3d}
+              onScrollAnim={onScrollAnim}
             >
               <SvgSizingWrapper
                 overrideStyles={{ transform: ` ${rotate} ${rotateY}` }}
@@ -76,8 +77,8 @@ const RenderCrystalsDynamically = ({
                   }
                 />
               </SvgSizingWrapper>
-            </div>
-          </AnimEffectWrapper>
+            </AnimEffectWrapper>
+          </div>
         )
       })}
     </React.Fragment>
