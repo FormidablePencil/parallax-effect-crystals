@@ -1,9 +1,9 @@
-
-import Crystals from './exports/Crystals';
+import Crystals from './exports/Crystals'
 import CrystalParallaxProvider from './CrystalParallaxProvider'
-import useGetRawCrystalData from './hooks/useGetRawCrystalData';
-import { crystalParallaxT } from './constants/crystalDataTypes';
-import CrystalParallax from './CrystalParallax';
+import useGetRawCrystalData from './hooks/useGetRawCrystalData'
+import { crystalParallaxT } from './constants/crystalDataTypes'
+import crystalParallaxDefault from './constants/crystalParallaxDefault'
+import CrystalParallax from './CrystalParallax'
 
 export const CrystalGallery = Crystals
 
@@ -13,6 +13,9 @@ export const CrystalGallery = Crystals
 
 export {
   CrystalParallax,
-  CrystalParallaxProvider, useGetRawCrystalData,
-  crystalParallaxT
+  CrystalParallaxProvider,
+  useGetRawCrystalData,
+  crystalParallaxT,
+  crystalParallaxDefault
 }
+

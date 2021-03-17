@@ -1,14 +1,14 @@
 import React from 'react'
 import {
   CrystalParallaxProvider,
-  CrystalParallax
+  CrystalParallax,
+  crystalParallaxDefault
 } from 'parallax-effect-crystals'
 import 'parallax-effect-crystals/dist/index.css'
-import crystalParallaxDefault from './constants/crystalParallaxDefault'
 import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
 
 const App = () => {
-  const crystalClickedOn = (crystalUUID) =>
+  const crystalClickedOn = (crystalUUID: any) =>
     console.log(crystalUUID, 'crystalUUID')
 
   return (

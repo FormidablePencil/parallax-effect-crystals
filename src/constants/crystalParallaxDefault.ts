@@ -1,4 +1,4 @@
-import { crystalParallaxT } from 'parallax-effect-crystals'
+import { crystalParallaxT } from './crystalDataTypes'
 
 const feColorMatrixCrystalBackdropColor = `
 0     0     0     0     0 
