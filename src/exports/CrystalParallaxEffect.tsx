@@ -62,7 +62,7 @@ function CrystalParallaxEffect({
 
   return (
     <CrystalDataContext.Provider value={{ crystalData }}>
-      <div onMouseMove={onMouseMoveHandler} onScroll={onScrollHandler}>
+      <div onMouseMove={onMouseMoveHandler} onScrollCapture={onScrollHandler}>
         <div
           style={
             crystalData.crystalParallaxBg.backgroundImage
