@@ -7,7 +7,6 @@ const useMoveAnim = ({ eventToFollow }) => {
   }))
 
   const onScrollHandler = (e) => {
-    console.log(e, 'well?')
     if (eventToFollow === 'scroll')
       set({ xy: [e.target.scrollTop, e.target.scrollTop] })
   }
