@@ -13,7 +13,7 @@ const App = () => {
 
   return (
     <CrystalParallaxProvider
-      // crystalClickedOn={crystalClickedOn}
+      crystalClickedOn={crystalClickedOn}
       eventToFollow='mouse'
     >
       <BrowserRouter>
