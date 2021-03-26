@@ -26,6 +26,7 @@ const crystalDataMediaQueryReducer = ({
           data.crystalProps[type] = newValue /* //! */
           break
 
+        case 'imageRotate':
         case 'image':
         case 'imageHeight':
         case 'imageWidth':
@@ -33,10 +34,12 @@ const crystalDataMediaQueryReducer = ({
         case 'imageY':
           let whatProp
           if (type === 'image') whatProp = 'image'
-          if (type === 'imageHeight') whatProp = 'height'
-          if (type === 'imageWidth') whatProp = 'width'
-          if (type === 'imageX') whatProp = 'x'
-          if (type === 'imageY') whatProp = 'y'
+          else if (type === 'imageHeight') whatProp = 'height'
+          else if (type === 'imageWidth') whatProp = 'width'
+          else if (type === 'imageX') whatProp = 'x'
+          else if (type === 'imageY') whatProp = 'y'
+          else if (type === 'imageRotate') whatProp = 'rotate'
+            console.log('sdd')
           data.crystalProps.imageProps[whatProp] = newValue
           break
 
@@ -73,4 +76,3 @@ const crystalDataMediaQueryReducer = ({
 }
 
 export default crystalDataMediaQueryReducer
-

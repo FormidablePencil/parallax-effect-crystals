@@ -1,95 +1,100 @@
- /* .cls-1 {} */
+/* .cls-1 {} */
 
- /* .cls-2 {} */
+/* .cls-2 {} */
 
- /* .cls-2, .cls-6 {} */
+/* .cls-2, .cls-6 {} */
 
- /* .cls-3 {} */
+/* .cls-3 {} */
 
- /* cls-4: the edges: fill */
+/* cls-4: the edges: fill */
 
- /* cls-6: not needed cover over svg; remove */
+/* cls-6: not needed cover over svg; remove */
 
- /* cls-7: base; fill */
+/* cls-7: base; fill */
 
- /* cls-9: getting base to cover; remove */
+/* cls-9: getting base to cover; remove */
 
- .cls5crystal13 {
-   overflow: visible;
-   fill: rgba(71, 149, 246, 1);
- }
+.image {
+  background: blue;
+  transform: rotate(45deg);
+}
 
- .cls4 {
-   fill: rgba(71, 149, 246, 1);
- }
+.cls5crystal13 {
+  overflow: visible;
+  fill: rgba(71, 149, 246, 1);
+}
 
- .cls5crystal1 {
-   mask: url(#mask-crystal1);
- }
+.cls4 {
+  fill: rgba(71, 149, 246, 1);
+}
 
- .cls5crystal2 {
-   mask: url(#mask-crystal2);
- }
+.cls5crystal1 {
+  mask: url(#mask-crystal1);
+}
 
- .cls5crystal3 {
-   mask: url(#mask-crystal3);
- }
+.cls5crystal2 {
+  mask: url(#mask-crystal2);
+}
 
- .cls5crystal4 {
-   mask: url(#mask-crystal4);
- }
+.cls5crystal3 {
+  mask: url(#mask-crystal3);
+}
 
- .cls5crystal5 {
-   mask: url(#mask-crystal5);
- }
+.cls5crystal4 {
+  mask: url(#mask-crystal4);
+}
 
- .cls5crystal6 {
-   mask: url(#mask-crystal6);
- }
+.cls5crystal5 {
+  mask: url(#mask-crystal5);
+}
 
- .cls5crystal7 {
-   mask: url(#mask-crystal7);
- }
+.cls5crystal6 {
+  mask: url(#mask-crystal6);
+}
 
- .cls5crystal8 {
-   mask: url(#mask-crystal8);
- }
+.cls5crystal7 {
+  mask: url(#mask-crystal7);
+}
 
- .cls5crystal9 {
-   mask: url(#mask-crystal9);
- }
+.cls5crystal8 {
+  mask: url(#mask-crystal8);
+}
 
- .cls5crystal10 {
-   mask: url(#mask-crystal10);
- }
+.cls5crystal9 {
+  mask: url(#mask-crystal9);
+}
 
- .cls5crystal11 {
-   mask: url(#mask-crystal11);
- }
+.cls5crystal10 {
+  mask: url(#mask-crystal10);
+}
 
- .cls5crystal12 {
-   mask: url(#mask-crystal12);
- }
+.cls5crystal11 {
+  mask: url(#mask-crystal11);
+}
 
- .cls5crystal13 {
-   mask: url(#mask-crystal13);
- }
+.cls5crystal12 {
+  mask: url(#mask-crystal12);
+}
 
- .cls6 {
-   opacity: 1;
- }
+.cls5crystal13 {
+  mask: url(#mask-crystal13);
+}
 
- .cls7 {
-   fill: red;
- }
+.cls6 {
+  opacity: 1;
+}
 
- .cls8 {
-   fill: #fff;
-   stroke: #fff;
-   stroke-miterlimit: 10;
-   opacity: 0.25;
- }
+.cls7 {
+  fill: red;
+}
 
- .base {
-   fill: red
- }
+.cls8 {
+  fill: #fff;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  opacity: 0.25;
+}
+
+.base {
+  fill: red;
+}

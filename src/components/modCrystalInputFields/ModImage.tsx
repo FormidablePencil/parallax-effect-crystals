@@ -1,19 +1,35 @@
-import { Accordion, AccordionDetails, AccordionSummary, Grid, makeStyles, TextField, Typography } from '@material-ui/core'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Grid,
+  makeStyles,
+  TextField,
+  Typography
+} from '@material-ui/core'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import React from 'react'
-import { crystalPositionOnParallaxCanvasT } from '../../constants/crystalDataTypes';
+import { crystalPositionOnParallaxCanvasT } from '../../constants/crystalDataTypes'
 
-function ModImage({ dispatchCrystalData, expandedAccordions, toggleAccodion, selectedCrystalProps }:
-  { dispatchCrystalData, expandedAccordions, toggleAccodion, selectedCrystalProps: crystalPositionOnParallaxCanvasT }) {
-  const classes = useStyles();
+function ModImage({
+  dispatchCrystalData,
+  expandedAccordions,
+  toggleAccodion,
+  selectedCrystalProps
+}: {
+  dispatchCrystalData
+  expandedAccordions
+  toggleAccodion
+  selectedCrystalProps: crystalPositionOnParallaxCanvasT
+}) {
+  const classes = useStyles()
   return (
     <Grid item>
-      <Accordion
-        expanded={expandedAccordions.image}>
+      <Accordion expanded={expandedAccordions.image}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          onClick={() => toggleAccodion('image')}>
-
+          onClick={() => toggleAccodion('image')}
+        >
           <Typography variant='h5'>Image</Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -22,30 +38,65 @@ function ModImage({ dispatchCrystalData, expandedAccordions, toggleAccodion, sel
               <TextField
                 className={classes.imageTextField}
                 onChange={(e) =>
-                  dispatchCrystalData({ type: 'image', payload: { newValue: e.target.value } })}
+                  dispatchCrystalData({
+                    type: 'image',
+                    payload: { newValue: e.target.value }
+                  })
+                }
                 value={selectedCrystalProps.crystalProps.imageProps.image}
-                label='image' />
+                label='image'
+              />
             </Grid>
             <TextField
               onChange={(e) =>
-                dispatchCrystalData({ type: 'imageX', payload: { newValue: e.target.value } })}
+                dispatchCrystalData({
+                  type: 'imageX',
+                  payload: { newValue: e.target.value }
+                })
+              }
               value={selectedCrystalProps.crystalProps.imageProps.x}
-              label='x' />
+              label='x'
+            />
             <TextField
               onChange={(e) =>
-                dispatchCrystalData({ type: 'imageY', payload: { newValue: e.target.value } })}
+                dispatchCrystalData({
+                  type: 'imageY',
+                  payload: { newValue: e.target.value }
+                })
+              }
               value={selectedCrystalProps.crystalProps.imageProps.y}
-              label='y' />
+              label='y'
+            />
             <TextField
               onChange={(e) =>
-                dispatchCrystalData({ type: 'imageWidth', payload: { newValue: e.target.value } })}
+                dispatchCrystalData({
+                  type: 'imageWidth',
+                  payload: { newValue: e.target.value }
+                })
+              }
               value={selectedCrystalProps.crystalProps.imageProps.width}
-              label='width' />
+              label='width'
+            />
             <TextField
               onChange={(e) =>
-                dispatchCrystalData({ type: 'imageHeight', payload: { newValue: e.target.value } })}
+                dispatchCrystalData({
+                  type: 'imageHeight',
+                  payload: { newValue: e.target.value }
+                })
+              }
               value={selectedCrystalProps.crystalProps.imageProps.height}
-              label='height' />
+              label='height'
+            />
+            <TextField
+              onChange={(e) =>
+                dispatchCrystalData({
+                  type: 'imageRotate',
+                  payload: { newValue: e.target.value }
+                })
+              }
+              value={selectedCrystalProps.crystalProps.imageProps.rotate}
+              label='rotate'
+            />
           </Grid>
         </AccordionDetails>
       </Accordion>
@@ -53,11 +104,10 @@ function ModImage({ dispatchCrystalData, expandedAccordions, toggleAccodion, sel
   )
 }
 
-
 const useStyles = makeStyles((theme) => ({
   imageTextField: {
     width: 250
   }
-}));
+}))
 
 export default ModImage

@@ -13,6 +13,7 @@ export interface SelectCrystalT {
     y: number
     height: number
     width: number
+    rotate?: number
   }
 }
 
@@ -31,6 +32,7 @@ export interface mediaQueriesSelectCrystalT {
     y?: number
     height?: number
     width?: number
+    rotate?: number
   }
 }
 
@@ -108,7 +110,8 @@ const defaultCrystalData: crystalPositionOnParallaxCanvasT = {
       x: 200,
       y: 10,
       height: 225,
-      width: 225
+      width: 225,
+      rotate: 0
     },
     translateX3d: 3.5,
     translateY3d: 3.5,
@@ -147,7 +150,8 @@ export const crystalDataPlaceholder: crystalPositionOnParallaxCanvasT = {
       x: 0,
       y: 0,
       height: 0,
-      width: 0
+      width: 0,
+      rotate: 0
     },
     translateX3d: 0,
     translateY3d: 0,

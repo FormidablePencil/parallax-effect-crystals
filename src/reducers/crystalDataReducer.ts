@@ -19,6 +19,8 @@ const crystalDataReducer = ({
     case 'feColorMatrixBackdropColor':
       newState.crystals[crystalIndex].crystalProps[type] = newValue
       break
+
+    case 'imageRotate':
     case 'image':
     case 'imageHeight':
     case 'imageWidth':
@@ -30,6 +32,7 @@ const crystalDataReducer = ({
       if (type === 'imageWidth') whatProp = 'width'
       if (type === 'imageX') whatProp = 'x'
       if (type === 'imageY') whatProp = 'y'
+      if (type === 'imageRotate') whatProp = 'rotate'
       newState.crystals[crystalIndex].crystalProps.imageProps[
         whatProp
       ] = newValue

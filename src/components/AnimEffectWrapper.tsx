@@ -9,6 +9,12 @@ const AnimEffectWrapper = ({
   translateX3d,
   translateY3d,
   crystalUuid
+}: {
+  children
+  onScrollAnim?
+  translateX3d
+  translateY3d
+  crystalUuid
 }) => {
   const styles = useStyles()
   const trans4 = (x, y) =>
@@ -17,13 +23,17 @@ const AnimEffectWrapper = ({
 
   return (
     <animated.div
-      style={{
-        transform: onScrollAnim.xy.interpolate(trans4)
-      }}
+      style={
+        onScrollAnim && {
+          transform: onScrollAnim.xy.interpolate(trans4)
+        }
+      }
     >
       <div
         onClick={() => crystalClickedOn && crystalClickedOn(crystalUuid)}
-        className={`container ${crystalClickedOn && styles.onHoverEffect}`}
+        className={`${styles.container} ${
+          crystalClickedOn && styles.onHoverEffect
+        }`}
       >
         {children}
       </div>

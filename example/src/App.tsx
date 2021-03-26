@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   CrystalParallaxProvider,
   CrystalParallax,
@@ -8,42 +8,58 @@ import 'parallax-effect-crystals/dist/index.css'
 import { Route, Link, BrowserRouter, Switch } from 'react-router-dom'
 
 const App = () => {
-  const crystalClickedOn = (crystalUUID: any) =>
-    console.log(crystalUUID, 'crystalUUID')
+  const [fetchCrystalData, setFetchedCrystalData] = useState(null)
+
+  const fetchContent = async () => {
+    const res = await fetch(
+      'https://cinema-portfolio.wl.r.appspot.com/getcontentdataexmp'
+    )
+    res.json().then((data) => {
+      console.log(data)
+      setFetchedCrystalData(data.data.rawCrystalData)
+    })
+  }
+
+  useEffect(() => {
+    fetchContent()
+  }, [])
 
   return (
-    <CrystalParallaxProvider
-      crystalClickedOn={crystalClickedOn}
-      eventToFollow='scroll'
-    >
-      <BrowserRouter>
-        <Link to='/'>parallax canvas</Link>
-        <Link to='/page2'>page 2</Link>
-        <Switch>
-          <Route exact path='/'>
-            <Page />
-          </Route>
-          <Route path='/page2'>
-            <div>page2</div>
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </CrystalParallaxProvider>
+    <BrowserRouter>
+      <Link to='/'>parallax canvas</Link>
+      <Link to='/example'>fetched data</Link>
+      <Switch>
+        <Route exact path='/'>
+          <CrystalParallaxProvider
+            eventToFollow='scroll'
+          >
+            <Page crystalData={crystalParallaxDefault} />
+          </CrystalParallaxProvider>
+        </Route>
+        <Route path='/example'>
+          <CrystalParallaxProvider
+            eventToFollow='scroll'
+          >
+            <Page crystalData={fetchCrystalData} />
+          </CrystalParallaxProvider>
+        </Route>
+      </Switch>
+    </BrowserRouter>
   )
 }
 
 export default App
 
-const Page = () => {
-  const onChangeHandler = () => {
-    console.log('CrystalParallax changed')
-  }
+const Page = ({ crystalData }: { crystalData: any }) => {
+  const onChangeHandler = () => console.log('CrystalParallax changed')
 
-  return (
-    <CrystalParallax
-      onChange={onChangeHandler}
-      withGui={true}
-      pulledRawCrystalData={crystalParallaxDefault}
-    />
-  )
+  if (!crystalData) return null
+  else
+    return (
+      <CrystalParallax
+        onChange={onChangeHandler}
+        withGui={true}
+        pulledRawCrystalData={crystalData}
+      />
+    )
 }

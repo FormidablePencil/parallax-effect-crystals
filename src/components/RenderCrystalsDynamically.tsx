@@ -1,10 +1,10 @@
-import React from 'react'
-import cloneDeep from 'lodash/cloneDeep'
 import { makeStyles } from '@material-ui/core'
-import { SvgSizingWrapper } from '../exports/Crystals'
-import SelectCrystal from './crystals/SelectCrystal'
+import cloneDeep from 'lodash/cloneDeep'
+import React from 'react'
 import { crystalParallaxT } from '../constants/crystalDataTypes'
+import { SvgSizingWrapper } from '../exports/Crystals'
 import AnimEffectWrapper from './AnimEffectWrapper'
+import SelectCrystal from './crystals/SelectCrystal'
 
 const RenderCrystalsDynamically = ({
   onScrollAnim,
@@ -72,7 +72,7 @@ const RenderCrystalsDynamically = ({
                   whatCrystal={props.shardIndex}
                   crystalProps={
                     modedPropsSelectedForEdit
-                      ? props.crystalProps
+                      ? modedPropsSelectedForEdit
                       : props.crystalProps
                   }
                 />
