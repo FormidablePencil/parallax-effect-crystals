@@ -39,7 +39,6 @@ const crystalDataMediaQueryReducer = ({
           else if (type === 'imageX') whatProp = 'x'
           else if (type === 'imageY') whatProp = 'y'
           else if (type === 'imageRotate') whatProp = 'rotate'
-            console.log('sdd')
           data.crystalProps.imageProps[whatProp] = newValue
           break
 

@@ -12,7 +12,7 @@ export interface dispatchCrystalDataT { type, payload?: { newValue?, moddedMedia
 
 const useParallaxProperties = (): useParallaxPropertiesT => {
   const [crystalIndex, setCrystalIndex] = useState(0)
-  const [crystalSelectionDistinction, setCrystalSelectionDistinction] = useState(true)
+  const [crystalSelectionDistinction, setCrystalSelectionDistinction] = useState(false)
   const [selectedForModeColors, setSelectedForModeColors] = useState<selectedForModeColorsT>({ middle: '#000000', edge: '#FFFFFF' })
   const [modMenuFixed, setModMenuFixed] = useState(true)
   const [rawCrystalData, setRawCrystalData] = useState<crystalParallaxT>(parallaxDefaults)
