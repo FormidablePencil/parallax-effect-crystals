@@ -23,7 +23,7 @@ const AnimEffectWrapper = ({
     >
       <div
         onClick={() => crystalClickedOn && crystalClickedOn(crystalUuid)}
-        className={crystalClickedOn && styles.container}
+        className={`container ${crystalClickedOn && styles.onHoverEffect}`}
       >
         {children}
       </div>
@@ -36,7 +36,9 @@ const useStyles = makeStyles(() => ({
     maxHeight: '10em',
     maxWidth: '10em',
     // backgroundColor: 'orange',
-    transition: 'transform 500ms',
+    transition: 'transform 500ms'
+  },
+  onHoverEffect: {
     '&:hover': {
       cursor: 'pointer',
       transform: 'scale(1.2) translateX(-20px)',
